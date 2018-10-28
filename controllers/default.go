@@ -188,3 +188,21 @@ func (self *UserController) Get() {
 
 
 
+
+
+
+
+
+
+type PorjectSignupController struct {
+	beego.Controller
+}
+
+func (c *ProjectSignupController) Get() {
+	// c.Data["Website"] = "beego.me"
+	// c.Data["Email"] = "astaxie@gmail.com"
+	// c.TplName = "index.tpl"
+	// c.Ctx.WriteString("hello world.")
+	c.TplName = "ProjectSignupServlet.html"
+}
+
