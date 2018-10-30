@@ -194,7 +194,7 @@ func (self *UserController) Get() {
 
 
 
-type PorjectSignupController struct {
+type ProjectSignupController struct {
 	beego.Controller
 }
 
@@ -203,6 +203,11 @@ func (c *ProjectSignupController) Get() {
 	// c.Data["Email"] = "astaxie@gmail.com"
 	// c.TplName = "index.tpl"
 	// c.Ctx.WriteString("hello world.")
-	c.TplName = "ProjectSignupServlet.html"
+
+	// 数据
+	c.Data["Website"] = "58同城"
+
+	// 模板
+	c.TplName = "ProjectSignupServlet.tpl"
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>访谈活动列表</title>
+	<title>活动详情</title>
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,20 +152,52 @@
     .footer a:first-child:before{
         display: none;
     }
+
+    .contents {
+        text-align: center;
+    }
+    .page-content {
+        color: #666;
+        line-height: 20px;
+        margin: 10px 20px;
+    }
     </style>
 
-    <link rel="stylesheet" href="/static/css/dropload.css">
+    <!-- <link rel="stylesheet" href="/static/css/dropload.css"> -->
 
 </head>
 <body onload="load()">
 
 	<div class="header">
-	    <h1>最新活动</h1>
+	    <h1>{{.Website}}</h1>
 	</div>
-	<div class="content">
-	    <div class="lists">
-	        
-	    </div>
+	<div class="contents container">
+        <div class="page-header">
+            <h3>厦门</h3>
+            <h5><small>思明区</small><h5>
+        </div>
+        <div class="page-content">
+            <span>58同城 美国纽交所上市公司，国内专业的“本地、免费、真实、高效”生活服务平台！找工作，找兼职，买卖二手物品，二手车交易，买卖宠物，找搬家，找保姆，上58同城一站解决！信息真实可靠，先行赔付！
+www.58.com - 品牌广告
+</span>
+        </div>
+	    <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">姓名</label>
+                <div class="col-sm-10 form-username">
+                    <input type="text" name="form-control" placeholder="请输入姓名">
+                </div>
+                <label class="col-sm-2 control-label">手机号</label>
+                <div class="col-sm-10 form-phone">
+                    <input type="text" name="form-control" placeholder="请输入手机号">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">提交</button>
+                </div>
+            </div>
+        </form>
 	</div>
 	<div class="footer">
 	    <a href="#1" class="item">测试菜单</a>
