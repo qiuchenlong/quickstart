@@ -12,5 +12,5 @@ func init() {
     beego.Router("/ProjectSignup", &controllers.ProjectSignupController{})
 
     // 管理员
-    beego.Router("/admin", &controllers.AdminController{})
+    beego.Router("/webgl", &controllers.AdminController{})
 }
