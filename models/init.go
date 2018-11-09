@@ -30,7 +30,7 @@ func Init() {
 
     orm.RegisterDataBase("default", "mysql", dsn)
     // 注册model模型
-    orm.RegisterModel(new(User))
+    orm.RegisterModel(new(Admin))
     //调用 RunCommand 执行 orm 命令。
     // orm.RunCommand()
 

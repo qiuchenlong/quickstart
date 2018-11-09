@@ -153,51 +153,132 @@
         display: none;
     }
 
-    .contents {
+    .page-header {
         text-align: center;
     }
     .page-content {
         color: #666;
         line-height: 20px;
-        margin: 10px 20px;
+        margin: 10px 0px;
+
+        border-radius: 10px;
+        padding: 10px;
+        background: #fff;
     }
+    .page-footer {
+        text-align: left;
+    }
+
+    .page-divide {
+        width: 100%;
+        height: 1px;
+        background: #999;
+        margin: 20px 0;
+    }
+
+    // 内容
+
+    .form-group {
+        margin: 20px 0;
+    }
+
+    .form-check {
+        color: #ff5500;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+
+
+    .form-title {
+        font-size: 1.2em;
+    }
+
+    .label-tip {
+        color: #ff1212;
+    }
+
     </style>
 
     <!-- <link rel="stylesheet" href="/static/css/dropload.css"> -->
 
 </head>
-<body onload="load()">
+<body>
 
 	<div class="header">
 	    <h1>{{.Website}}</h1>
 	</div>
 	<div class="contents container">
         <div class="page-header">
-            <h3>厦门</h3>
-            <h5><small>思明区</small><h5>
+            <h3>K旅游预约项目</h3>
+            <h5><small>发布于 2018-11-01</small><h5>
         </div>
         <div class="page-content">
-            <span>58同城 美国纽交所上市公司，国内专业的“本地、免费、真实、高效”生活服务平台！找工作，找兼职，买卖二手物品，二手车交易，买卖宠物，找搬家，找保姆，上58同城一站解决！信息真实可靠，先行赔付！
-www.58.com - 品牌广告
+            <span>K旅游预约项目 21-50岁 男女 有工作，学生 退休人员不要 之前有出国旅游经验，必须有护照，需要带来现场 未来4个月内有计划去中东国家旅游，其他欧美 东南亚等国家不要，看清楚了！ 5、现场自己用平板做访问，时间半小时左右，过程中需要摄像记录， 介意的不要报名，不会用平板的也不要报名！ 时间：11月9-12日 礼金：60元 地点：打浦桥日月光附近
 </span>
         </div>
-	    <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <label class="col-sm-2 control-label">姓名</label>
-                <div class="col-sm-10 form-username">
-                    <input type="text" name="form-control" placeholder="请输入姓名">
+
+        <div class="page-divide"></div>
+
+        <div class="page-footer">
+
+            <label class="form-title">请填写您的报名信息：</label>
+
+            <form class="form-horizontal" role="form" method="POST">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">姓名</label>
+                    <div class="col-sm-10 form-username">
+                        <input type="text" class="form-control" name="username" placeholder="请输入姓名">
+                    </div>
                 </div>
-                <label class="col-sm-2 control-label">手机号</label>
-                <div class="col-sm-10 form-phone">
-                    <input type="text" name="form-control" placeholder="请输入手机号">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">手机号</label>
+                    <div class="col-sm-10 form-phone">
+                        <input type="text" class="form-control" name="phone" placeholder="请输入手机号">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">提交</button>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">身份证</label>
+                    <div class="col-sm-10 form-ID">
+                        <input type="text" class="form-control" name="idcard" placeholder="请输入身份证">
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="form-group sex-options">
+                    <label class="col-sm-2 control-label">性别</label>
+                    <div class="col-sm-10 form-sex">
+                        <label id="0" class="checkbox-inline"><input type="checkbox" value="man" name="sex">男</label>
+                    <!-- </div>
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10 form-sex"> -->
+                        <label id="1" class="checkbox-inline"><input type="checkbox" value="woman" name="sex">女</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10 form-check">
+                        <div>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" checked="true">以上信息保存到常用报名人
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="label-tip">注 :*号为必填问题
+                </label>
+
+                <div class="page-divide"></div>
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-default btn-submit">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
 	</div>
 	<div class="footer">
 	    <a href="#1" class="item">测试菜单</a>
@@ -211,9 +292,18 @@ www.58.com - 品牌广告
 <script src="/static/js/zepto.min.js"></script>
 <script src="/static/js/dropload.min.js"></script>
 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-<!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+<script src="https://code.jquery.com/jquery.js"></script>
 
 <script>
+
+$(":checkbox[name=sex]").each(function () {
+    $(this).click(function() {
+        $(":checked[name=sex]").prop("checked", false);
+        if($(this).attr("checked") == undefined) {
+            $(this).prop("checked", "checked");
+        } 
+    });
+}) 
 
 </script>
 

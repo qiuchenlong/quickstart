@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"strings"
+
 	"quickstart/models"
 	"github.com/astaxie/beego"
 )
@@ -14,7 +16,7 @@ type BaseController struct {
 	beego.Controller
 	controllerName string
 	actionName     string
-	user           *models.User
+	user           *models.Admin
 	userId         int
 	userName       string
 	loginName      string
@@ -23,6 +25,54 @@ type BaseController struct {
 	noLayout	   bool
 }
 
+
+// 前期准备
+func (self *BaseController) Prepare() {
+	self.pageSize = 20
+	controllerName, actionName := self.GetControllerAndAction()
+	// 把Controller去掉，前面的业务名称小写
+	self.controllerName = strings.ToLower(controllerName[0 : len(controllerName) - 10])
+	self.actionName = strings.ToLower(actionName)
+
+	self.Data["version"] = beego.AppConfig.String("version")
+	self.Data["siteName"] = beego.AppConfig.String("site.name")
+	
+}
+
+
+// 是否是POST请求
+func (self *BaseController) isPost() bool {
+	return self.Ctx.Request.Method == "POST"
+}
+
+
+//获取用户IP地址
+func (self *BaseController) getClientIp() string {
+	s := strings.Split(self.Ctx.Request.RemoteAddr, ":")
+	return s[0]
+}
+
+
+// 重定向
+func (self *BaseController) redirect(url string) {
+	self.Redirect(url, 302)
+	self.StopRun()
+}
+
+
+// 加载模板
+func (self *BaseController) display(tpl ...string) {
+	var tplname string
+	if len(tpl) > 0 {
+		// 拼接真实的html页面名称
+		tplname = strings.Join([]string{tpl[0], "html"}, ".") 
+	} else {
+		// 没有传
+		tplname = self.controllerName + "/" + self.actionName + ".html"
+	}
+
+	self.TplName = tplname
+}
 
 
 // ajax返回

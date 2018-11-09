@@ -34,16 +34,15 @@
         height: 44px;
         line-height: 44px;
         border-bottom: 1px solid #ccc;
-        background-color: #eee;
+        background-color: #3498db;
     }
     .header h1{
         text-align: center;
         font-size: 2rem;
         font-weight: normal;
-		color: #333;
+		color: #fff;
 		margin-top: 0px;
 		padding-top: 12px;
-
     }
     .content{
 		padding-top: 2px;
@@ -245,7 +244,7 @@ function load(){
     $.ajax({
                 type: 'GET',
                 async: true,
-                url: 'http://127.0.0.1:8080/search?page=1&size=10',
+                url: location.href + '/search?page=1&size=10',
                 dataType: 'json',
                 success: function(data){
                     var result = '';
@@ -295,7 +294,7 @@ $(function(){
             $.ajax({
                 type: 'GET',
                 async: true,
-                url: 'http://127.0.0.1:8080/search?page=0&size=10',
+                url: location.href + '/search?page=0&size=10',
                 dataType: 'json',
                 success: function(data){
                     var result = '';
@@ -343,7 +342,7 @@ $(function(){
                 type: 'GET',
                 async: true,
                 // 127.0.0.1
-                url: 'http://127.0.0.1:8080/search?page='+page+'&size='+size,
+                url: location.href + '/search?page='+page+'&size='+size,
                 dataType: 'json',
                 success: function(data){
                     var arrLen = data.Length;
