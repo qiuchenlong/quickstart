@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"fmt"
+	// "fmt"
 	"strconv"
 	"strings"
 	"time"
@@ -43,7 +43,7 @@ func (self *LoginController) LoginIn() {
 			flash := beego.NewFlash()
 			errorMsg := ""
 
-			fmt.Println(libs.Md5([]byte(password+user.Salt)))
+			// fmt.Println(libs.Md5([]byte(password+user.Salt)))
 			
 			if err != nil || user.Password != libs.Md5([]byte(password+user.Salt)) {
 				errorMsg = "帐号或密码错误"
