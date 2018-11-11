@@ -18,6 +18,9 @@ func init() {
     beego.Router("/home", &controllers.HomeController{}, "*:Index")
     beego.Router("/pub", &controllers.PubController{}, "*:Pub")
 
+    // 抖音
+    beego.AutoRouter(&controllers.DouyinController{})
+
 
     beego.AutoRouter(&controllers.AdminController{})
 }
