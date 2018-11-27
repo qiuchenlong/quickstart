@@ -244,7 +244,7 @@ function load(){
     $.ajax({
                 type: 'GET',
                 async: true,
-                url: location.href + '/search?page=1&size=10',
+                url: 'http://129.204.44.124/search?page=1&size=10',
                 dataType: 'json',
                 success: function(data){
                     var result = '';
@@ -294,7 +294,7 @@ $(function(){
             $.ajax({
                 type: 'GET',
                 async: true,
-                url: location.href + '/search?page=0&size=10',
+                url: 'http://129.204.44.124/search?page=0&size=10',
                 dataType: 'json',
                 success: function(data){
                     var result = '';
@@ -342,7 +342,7 @@ $(function(){
                 type: 'GET',
                 async: true,
                 // 127.0.0.1
-                url: location.href + '/search?page='+page+'&size='+size,
+                url: 'http://129.204.44.124/search?page='+page+'&size='+size,
                 dataType: 'json',
                 success: function(data){
                     var arrLen = data.Length;
