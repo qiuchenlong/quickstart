@@ -1,54 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>访谈活动列表</title>
-  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+    {{template "header.tpl" .}}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- 引入 Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
-    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
-    <!--[if lt IE 9]>
-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-  	<style>
-    *{
-        margin: 0;
-        padding:0;
-        -webkit-tap-highlight-color:rgba(0,0,0,0);
-        -webkit-text-size-adjust:none;
-    }
-    html{
-        font-size: 10px;
-    }
-    body{
-        background-color: #f5f5f5;
-        font-size: 1.2em;
-    }
-    .header{
-        height: 44px;
-        line-height: 44px;
-        border-bottom: 1px solid #ccc;
-        background-color: #eee;
-    }
-    .header h1{
-        text-align: center;
-        font-size: 2rem;
-        font-weight: normal;
-		color: #333;
-		margin-top: 0px;
-		padding-top: 12px;
-
-    }
+    <style type="text/css">
+        
     .content{
-		padding-top: 2px;
+        padding-top: 2px;
         padding-bottom: 40px;
-        background-color: #ebebeb;
+        background-color: #efeff4;
     }
     .content .item{
         display: -webkit-box;
@@ -74,7 +35,7 @@
         width: 40px;
         height: 40px;
         border:1px solid #ddd;
-		display: none;
+        /*display: none;*/
     }
     .content .item h3{
         display: block;
@@ -88,12 +49,16 @@
         line-height: 20px;
         margin: 0 0px;
         font-size: 1.5rem;
+
+        margin-left: 10px;
     }
     .content .item .date{
         display: block;
         height: 20px;
         line-height: 20px;
         color: #999;
+
+        margin-left: 10px;
     }
     .opacity{
         -webkit-animation: opacity 0.3s linear;
@@ -115,43 +80,11 @@
             opacity:1;
         }
     }
-    .footer{
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        width: 100%;
-        height: 40px;
-		display: none;
-    }
-    .footer a{
-        position: relative;
-        display: block;
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        line-height: 40px;
-        text-align: center;
-        color: #666;
-        background-color: #eee;
-        text-decoration: none;
-    }
-    .footer a:before{
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 10px;
-        width: 1px;
-        height: 20px;
-        background-color: #ccc;
-    }
-    .footer a:first-child:before{
+
+    .btn-primary {
         display: none;
     }
+
     </style>
 
     <link rel="stylesheet" href="/static/css/dropload.css">
@@ -160,7 +93,7 @@
 <body onload="load()">
 
 	<div class="header">
-	    <h1>最新活动</h1>
+	    <h1>列表</h1>
 	</div>
 	<div class="content">
 	    <div class="lists">
@@ -241,23 +174,26 @@
 <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
 
 <script>
+
 function load(){
     $.ajax({
                 type: 'GET',
                 async: true,
-                url: 'http://127.0.0.1:8080/search?page=1&size=10',
+                url: "http://spider.dcloud.net.cn/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at",//location.href + '/search?page=1&size=10',
                 dataType: 'json',
                 success: function(data){
                     var result = '';
-                    for(var i = 0; i < data.Lists.length; i++){
-                        result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
-                                        +'<img src="'+data.Lists[i].Pic+'" alt="" >'
-                                        +'<div style="width: 100%;">'
-                                            +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
-                                            +'<span class="date">'+data.Lists[i].Date+'</span>'
-                                        +'</div>'
-                                        +'<button type="button" class="btn btn-primary">我要报名</button>'
-                                    +'</a>';
+                    for(var i = 0; i < data.length; i++){
+                        // result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
+                        //                 +'<img src="'+data.Lists[i].Pic+'" alt="" >'
+                        //                 +'<div style="width: 100%;">'
+                        //                     +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
+                        //                     +'<span class="date">'+data.Lists[i].Date+'</span>'
+                        //                 +'</div>'
+                        //                 +'<button type="button" class="btn btn-primary">我要报名</button>'
+                        //             +'</a>';
+
+                        result += getTextHtml(data, i);
                     }
                     $('.lists').html(result);
 
@@ -269,6 +205,12 @@ function load(){
             });
 }
 
+
+// http://spider.dcloud.net.cn/api/news?published_at=2018-12-09 12:24:38
+
+// http://127.0.0.1:8080/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at&minId=77178&time=1544330724143&pageSize=10
+// http://127.0.0.1:8080/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at&minId=77188&time=1544330666310&pageSize=10
+// http://127.0.0.1:8080/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at
 
 
 $(function(){
@@ -292,22 +234,25 @@ $(function(){
             domNoData  : '<div class="dropload-noData">暂无数据</div>'
         },
         loadUpFn : function(me){
+            // alert("下拉刷新...");
             $.ajax({
                 type: 'GET',
                 async: true,
-                url: 'http://127.0.0.1:8080/search?page=0&size=10',
+                url: "http://spider.dcloud.net.cn/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at",//location.href + '/search?page=0&size=10',
                 dataType: 'json',
                 success: function(data){
                     var result = '';
-                    for(var i = 0; i < data.Lists.length; i++){
-                        result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
-                                        +'<img src="'+data.Lists[i].Pic+'" alt="" >'
-                                        +'<div style="width: 100%;">'
-                                            +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
-                                            +'<span class="date">'+data.Lists[i].Date+'</span>'
-                                        +'</div>'
-                                        +'<button type="button" class="btn btn-primary">我要报名</button>'
-                                    +'</a>';
+                    for(var i = 0; i < data.length; i++){
+                        // result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
+                        //                 +'<img src="'+data.Lists[i].Pic+'" alt="" >'
+                        //                 +'<div style="width: 100%;">'
+                        //                     +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
+                        //                     +'<span class="date">'+data.Lists[i].Date+'</span>'
+                        //                 +'</div>'
+                        //                 +'<button type="button" class="btn btn-primary">我要报名</button>'
+                        //             +'</a>';
+
+                        result += getTextHtml(data, i);
                     }
 
 
@@ -329,13 +274,30 @@ $(function(){
                     },1);
                 },
                 error: function(xhr, type){
-                    alert('top, Ajax error!');
+                    // alert('top, Ajax error!');
                     // 即使加载出错，也得重置
-                    me.resetload();
+                    // me.resetload();
                 }
             });
         },
         loadDownFn : function(me){
+            // alert("加载更多...");
+
+            // console.log($(".lists>a:last-child>div>span").html())
+            // console.log($(".lists>a:last-child").attr("id"))
+            // console.log($(".lists>a:first-child").attr("id"))
+
+            
+
+            var minId = $(".lists>a:last-child").attr("id");
+            var time = new Date().getTime() + "";
+            var params = "&minId=" + minId + "&time=" + time + "&pageSize=10";
+
+            if (minId == undefined) {
+                params = "";
+            }
+
+
             page++;
             // 拼接HTML
             var result = '';
@@ -343,20 +305,22 @@ $(function(){
                 type: 'GET',
                 async: true,
                 // 127.0.0.1
-                url: 'http://127.0.0.1:8080/search?page='+page+'&size='+size,
+                url: "http://spider.dcloud.net.cn/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at" + params,//location.href + '/search?page='+page+'&size='+size,
                 dataType: 'json',
                 success: function(data){
-                    var arrLen = data.Length;
+                    var arrLen = data.length;
                     if(arrLen > 0){
                         for(var i=0; i<arrLen; i++){
-                            result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
-                                            +'<img src="'+data.Lists[i].Pic+'" alt="" >'
-                                            +'<div style="width: 100%;">'
-                                                +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
-                                                +'<span class="date">'+data.Lists[i].Date+'</span>'
-                                            +'</div>'
-                                            +'<button type="button" class="btn btn-primary">我要报名</button>'
-                                        +'</a>';
+                            // result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
+                            //                 +'<img src="'+data.Lists[i].Pic+'" alt="" >'
+                            //                 +'<div style="width: 100%;">'
+                            //                     +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
+                            //                     +'<span class="date">'+data.Lists[i].Date+'</span>'
+                            //                 +'</div>'
+                            //                 +'<button type="button" class="btn btn-primary">我要报名</button>'
+                            //             +'</a>';
+
+                            result += getTextHtml(data, i);
                         }
                     // 如果没有数据
                     }else{
@@ -374,15 +338,70 @@ $(function(){
                     },1);
                 },
                 error: function(xhr, type){
-                    alert('bottom, Ajax error!');
+                    // alert('bottom, Ajax error!');
                     // 即使加载出错，也得重置
-                    me.resetload();
+                    // me.resetload();
                 }
             });
         },
         threshold : 50
     });
 });
+
+
+
+function getTextHtml(data, i) {
+    return '<a id="' + data[i].id + '" class="item opacity" href="/detail?id='+data[i].post_id+'&published_at=' + dateUtils.format(data[i].published_at) + '">'
+                +'<img src="'+data[i].cover+'" alt="" >'
+                +'<div style="width: 100%;">'
+                    +'<h3 class="title">'+data[i].title+'</h3>'
+                    +'<span class="date">'+dateUtils.format(data[i].published_at)+'</span>'
+                +'</div>'
+                +'<button type="button" class="btn btn-primary">我要报名</button>'
+            +'</a>';
+}
+
+
+
+/**
+ * 格式化时间的辅助类，将一个时间转换成x小时前、y天前等
+ */
+var dateUtils = {
+    UNITS: {
+        '年': 31557600000,
+        '月': 2629800000,
+        '天': 86400000,
+        '小时': 3600000,
+        '分钟': 60000,
+        '秒': 1000
+    },
+    humanize: function(milliseconds) {
+        var humanize = '';
+        $.each(this.UNITS, function(unit, value) {
+            if(milliseconds >= value) {
+                humanize = Math.floor(milliseconds / value) + unit + '前';
+                return false;
+            }
+            return true;
+        });
+        return humanize || '刚刚';
+    },
+    format: function(dateStr) {
+        var date = this.parse(dateStr)
+        var diff = Date.now() - date.getTime();
+        if(diff < this.UNITS['天']) {
+            return this.humanize(diff);
+        }
+        var _format = function(number) {
+            return(number < 10 ? ('0' + number) : number);
+        };
+        return date.getFullYear() + '/' + _format(date.getMonth() + 1) + '/' + _format(date.getDay()) + '-' + _format(date.getHours()) + ':' + _format(date.getMinutes());
+    },
+    parse: function(str) { //将"yyyy-mm-dd HH:MM:ss"格式的字符串，转化为一个Date对象
+        var a = str.split(/[^0-9]/);
+        return new Date(a[0], a[1] - 1, a[2], a[3], a[4], a[5]);
+    }
+};
 </script>
 
 </body>

@@ -1,4 +1,4 @@
-# quickstart
+# beego
 go project
 
 ## github
