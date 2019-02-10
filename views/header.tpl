@@ -25,7 +25,7 @@
         font-size: 10px;
     }
     body{
-        background-color: #efeff4;
+        background-color: #f5f5f5;
         font-size: 1.2em;
     }
     .header{

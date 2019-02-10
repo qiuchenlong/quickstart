@@ -31,4 +31,8 @@ func init() {
 
     // 管理员
     beego.AutoRouter(&controllers.AdminController{})
+
+
+    // 时钟
+    beego.AutoRouter(&controllers.ClockController{})
 }
