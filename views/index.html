@@ -241,7 +241,7 @@
         <h1 class="movie-title">来不及拥抱 - BD</h1>
 
         <div id="video" style="width:100%; height:500px"></div>
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             var videoObject = {
                 container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
                 variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
@@ -249,7 +249,7 @@
                 video:'https://www.qiuchenlong.top/st1/yinyuetai_001.mp4'//视频地址
             };
             var player=new ckplayer(videoObject);
-        </script>
+        </script> -->
 
 
         <div class="panel-footer">
@@ -296,8 +296,51 @@
 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
 <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
 
+<!-- 野狗实时云通讯SDK -->
+<script src="https://cdn.wilddog.com/sdk/js/2.5.17/wilddog-sync.js"></script>
 
 <script>
+
+    function load() {
+        // body...
+        var config = {
+          syncURL: "https://wd9985152631szojuk.wilddogio.com" //输入节点 URL
+        };
+        wilddog.initializeApp(config);
+        var ref = wilddog.sync().ref();
+
+
+        // snapshot 里面的数据会一直和云端保持同步
+        ref.on("value", function(snapshot) {
+            console.log(snapshot.val());
+
+            var url = snapshot.val().data.url;
+            init_video_player(url);
+
+        });
+        // 如果你只想监听一次，那么你可以使用 once()
+        ref.once("value").then(function(snapshot){
+            console.info(snapshot.val());
+        }).catch(function(err){
+            console.error(err);
+        })
+    }
+
+
+    function init_video_player(url) {
+        // body...
+        var videoObject = {
+            container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
+            variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+            flashplayer: false,//如果强制使用flashplayer则设置成true
+            video: url//视频地址 'https://www.qiuchenlong.top/st1/yinyuetai_001.mp4'
+        };
+        var player=new ckplayer(videoObject);
+    }
+
+    
+
+
 
 // function load(){
 //     $.ajax({
