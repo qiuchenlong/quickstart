@@ -346,6 +346,9 @@
             var url = snapshot.val().data.url;
             url = "rtmp://live.hkstv.hk.lxdns.com/live/hks1";
             url = "http://ivi.bupt.edu.cn/hls/hunanhd.m3u8";
+            url = "http://yun.kubozy-youku-163.com/20190309/7078_157456e5/1000k/hls/index.m3u8"
+
+            url = "http://hlsmgsplive.miguvideo.com:8080/wd-hunanhd-350/01.m3u8?msisdn=migu&mdspid=&spid=699017&netType=0&sid=2201064496&pid=2028597799&timestamp=20190314213622&Channel_ID=1004_10010001005&ProgramID=619858170&ParentNodeID=-99&assertID=2201064496&client_ip=47.98.184.16&SecurityKey=20190314213622&promotionId=&mvid=&mcid=&mpid=&mtv_session=7d1800869da526022584358c5454aba4&HlsSubType=1&HlsProfileId=1&nphaid=0&encrypt=b01d5731879794b852ca6b10ecd4704b";
             init_video_player(url);
 
 
@@ -365,11 +368,21 @@
             container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
             variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
             flashplayer: false,//如果强制使用flashplayer则设置成true
+            live: true,
+            autoplay: true,
             video: url//视频地址 'https://www.qiuchenlong.top/st1/yinyuetai_001.mp4'
         };
         var player=new ckplayer(videoObject);
+
+
+        setInterval(getTimeStamp, 3000);
     }
 
+
+    function getTimeStamp() {
+        var timestamp = Date.parse(new Date()) / 1000;
+        console.log(timestamp);
+    }
     
 
 
