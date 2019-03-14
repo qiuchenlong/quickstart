@@ -4,7 +4,7 @@ import (
 	"net/url"
 
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/orm"
+	// "github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -28,18 +28,18 @@ func Init() {
     	dsn = dsn + "&loc=" + url.QueryEscape(timezone)
     }
 
-    orm.RegisterDataBase("default", "mysql", dsn)
-    // 注册model模型
-    orm.RegisterModel(new(Admin))
-    //调用 RunCommand 执行 orm 命令。
-    // orm.RunCommand()
+ //    orm.RegisterDataBase("default", "mysql", dsn)
+ //    // 注册model模型
+ //    orm.RegisterModel(new(Admin))
+ //    //调用 RunCommand 执行 orm 命令。
+ //    // orm.RunCommand()
 
-    if beego.AppConfig.String("runmode") == "dev" {
-    	// 开启 ORM 调试模式
-		orm.Debug = true
-		// 自动建表
-		orm.RunSyncdb("default", false, true)
-	}
+ //    if beego.AppConfig.String("runmode") == "dev" {
+ //    	// 开启 ORM 调试模式
+	// 	orm.Debug = true
+	// 	// 自动建表
+	// 	orm.RunSyncdb("default", false, true)
+	// }
 }
 
 
