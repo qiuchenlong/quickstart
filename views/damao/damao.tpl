@@ -274,12 +274,20 @@
                 <ul>
                     <li class="casl-l">按分类：</li>
                     <li class="casl-r">
+
+
+                    {{range $index, $elem := .Categorys}}
+                    <a
+                     {{if eq $.Category $elem.type}}
+                     class="active"
+                     {{end}}
+                     href="/damao/damao?page=2&limit=30&category={{$elem.type}}">{{$elem.name}}</a>
+                    {{end}}
                     
-                    <a href="/y/dianying.html">电影</a>
+
+                    <!-- <a href="/y/dianshiju.html">电视剧</a> -->
                     
-                    <a href="/y/dianshiju.html">电视剧</a>
-                    
-                    <a class="active" href="/y/dongman.html">动漫</a>
+                    <!-- <a class="active" href="/y/dongman.html">动漫</a> -->
                     
                     </li>
                 </ul>
@@ -379,212 +387,215 @@
             <div class="row-five">
                 <div class="box-title"><b>最新动漫：</b></div>
                 <div class="box-body">
-                     
+
+                    {{range .List}}
+
                     <div class="box-item">
-                        <a class="item-link" href="/m/xiongbinglianzhizhutianjianglin.html" target="_blank" title="雄兵连之诸天降临">
-                            <img src="/uploads/allimg/190210/66bbb727ee4e5abc.jpg" alt="雄兵连之诸天降临">
+                        <a class="item-link" href="{{ .url }}" target="_blank" title="{{ .name }}">
+                            <img src="{{ .image }}" alt="{{ .name }}">
                             <button class="hdtag">更新至8集/共12集</button>
                         </a>
                         <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="雄兵连之诸天降临" href="/m/xiongbinglianzhizhutianjianglin.html">雄兵连之诸天降临</a></div>
+                            <div class="item-name"><a class="movie-name" target="_blank" title="{{ .name }}" href="/m/xiongbinglianzhizhutianjianglin.html">{{ .name }}</a></div>
                             <em>添加时间：<strong><span>2019-03-08</span></strong></em>
                         </div>
                     </div>
+
+                    {{end}}
+
                      
-                    <div class="box-item">
-                        <a class="item-link" href="/m/huajianghuzhibuliangrendi3ji.html" target="_blank" title="画江湖之不良人第3季">
-                            <img src="/uploads/allimg/181214/852711a864b79275.jpg" alt="画江湖之不良人第3季">
-                            <button class="hdtag">更新至21集/共40集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="画江湖之不良人第3季" href="/m/huajianghuzhibuliangrendi3ji.html">画江湖之不良人第3季</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/shanheshejitu.html" target="_blank" title="山河社稷图">
-                            <img src="/uploads/allimg/181028/12794bd7926f8b50.jpg" alt="山河社稷图">
-                            <button class="hdtag">更新至19集/共20集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="山河社稷图" href="/m/shanheshejitu.html">山河社稷图</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/dunzhiyongzhechengminglu.html" target="_blank" title="盾之勇者成名录">
-                            <img src="/uploads/allimg/190103/40822439b3c549f1.jpg" alt="盾之勇者成名录">
-                            <button class="hdtag">更新至9集/共25集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="盾之勇者成名录" href="/m/dunzhiyongzhechengminglu.html">盾之勇者成名录</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/mingzhidongjinglianga.html" target="_blank" title="明治东京恋伽">
-                            <img src="/uploads/allimg/190102/0633236e26b37753.jpg" alt="明治东京恋伽">
-                            <button class="hdtag">更新至9集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="明治东京恋伽" href="/m/mingzhidongjinglianga.html">明治东京恋伽</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/xueyinglingzhu.html" target="_blank" title="雪鹰领主">
-                            <img src="/uploads/allimg/181221/f0efd68b51927e9d.jpg" alt="雪鹰领主">
-                            <button class="hdtag">更新至13集/共24集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="雪鹰领主" href="/m/xueyinglingzhu.html">雪鹰领主</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/zuqiuxiaojiang_xinzuqiuxiaojiang.html" target="_blank" title="足球小将/新足球小将">
-                            <img src="/uploads/allimg/181214/9bf32fe673732562.jpg" alt="足球小将/新足球小将">
-                            <button class="hdtag">更新至48集/共52集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="足球小将/新足球小将" href="/m/zuqiuxiaojiang_xinzuqiuxiaojiang.html">足球小将/新足球小将</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/shaoniantaitanchujidiwuji.html" target="_blank" title="少年泰坦出击第五季">
-                            <img src="/uploads/allimg/180706/2477bba76e53a2e3.jpg" alt="少年泰坦出击第五季">
-                            <button class="hdtag">更新至23集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="少年泰坦出击第五季" href="/m/shaoniantaitanchujidiwuji.html">少年泰坦出击第五季</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/xunixiaojiezaikanzhuoni.html" target="_blank" title="虚拟小姐在看着你">
-                            <img src="/uploads/allimg/190112/1cd75c64ac02b111.jpg" alt="虚拟小姐在看着你">
-                            <button class="hdtag">第07集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="虚拟小姐在看着你" href="/m/xunixiaojiezaikanzhuoni.html">虚拟小姐在看着你</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/xiongbinglian2zhutianjianglin.html" target="_blank" title="雄兵连2诸天降临">
-                            <img src="/uploads/allimg/190127/8bacce16cf88baf9.jpg" alt="雄兵连2诸天降临">
-                            <button class="hdtag">第08集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="雄兵连2诸天降临" href="/m/xiongbinglian2zhutianjianglin.html">雄兵连2诸天降临</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/huajianghuzhibuliangrendisanji.html" target="_blank" title="画江湖之不良人第三季">
-                            <img src="/uploads/allimg/181028/eb9fdc4f9373a601.jpg" alt="画江湖之不良人第三季">
-                            <button class="hdtag">第21集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="画江湖之不良人第三季" href="/m/huajianghuzhibuliangrendisanji.html">画江湖之不良人第三季</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/xinzhuanzuyiwenlutiejuchangban.html" target="_blank" title="新撰组异闻录~铁~剧场版">
-                            <img src="/uploads/allimg/181025/53afb92bf0d5608a.jpg" alt="新撰组异闻录~铁~剧场版">
-                            <button class="hdtag">第02集大结局</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="新撰组异闻录~铁~剧场版" href="/m/xinzhuanzuyiwenlutiejuchangban.html">新撰组异闻录~铁~剧场版</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/xiamuyourenzhang_jieyuankongchan.html" target="_blank" title="夏目友人帐：结缘空蝉">
-                            <img src="/uploads/allimg/190308/f74de5759662c1a6.jpg" alt="夏目友人帐：结缘空蝉">
-                            <button class="hdtag">TC日语中字</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="夏目友人帐：结缘空蝉" href="/m/xiamuyourenzhang_jieyuankongchan.html">夏目友人帐：结缘空蝉</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/ouxianghuodongdiqiji.html" target="_blank" title="偶像活动第七季">
-                            <img src="/uploads/allimg/180412/f24f9fd6f96f28c6.jpg" alt="偶像活动第七季">
-                            <button class="hdtag">第47集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="偶像活动第七季" href="/m/ouxianghuodongdiqiji.html">偶像活动第七季</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
-                     
-                    <div class="box-item">
-                        <a class="item-link" href="/m/fuchouzhejijiediwuji.html" target="_blank" title="复仇者集结第五季">
-                            <img src="/uploads/allimg/181001/f27b61c4cff9df60.jpg" alt="复仇者集结第五季">
-                            <button class="hdtag">第22集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="复仇者集结第五季" href="/m/fuchouzhejijiediwuji.html">复仇者集结第五季</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
-                    </div>
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/huajianghuzhibuliangrendi3ji.html" target="_blank" title="画江湖之不良人第3季">*/}}
+                            {{/*<img src="/uploads/allimg/181214/852711a864b79275.jpg" alt="画江湖之不良人第3季">*/}}
+                            {{/*<button class="hdtag">更新至21集/共40集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="画江湖之不良人第3季" href="/m/huajianghuzhibuliangrendi3ji.html">画江湖之不良人第3季</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/shanheshejitu.html" target="_blank" title="山河社稷图">*/}}
+                            {{/*<img src="/uploads/allimg/181028/12794bd7926f8b50.jpg" alt="山河社稷图">*/}}
+                            {{/*<button class="hdtag">更新至19集/共20集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="山河社稷图" href="/m/shanheshejitu.html">山河社稷图</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/dunzhiyongzhechengminglu.html" target="_blank" title="盾之勇者成名录">*/}}
+                            {{/*<img src="/uploads/allimg/190103/40822439b3c549f1.jpg" alt="盾之勇者成名录">*/}}
+                            {{/*<button class="hdtag">更新至9集/共25集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="盾之勇者成名录" href="/m/dunzhiyongzhechengminglu.html">盾之勇者成名录</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/mingzhidongjinglianga.html" target="_blank" title="明治东京恋伽">*/}}
+                            {{/*<img src="/uploads/allimg/190102/0633236e26b37753.jpg" alt="明治东京恋伽">*/}}
+                            {{/*<button class="hdtag">更新至9集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="明治东京恋伽" href="/m/mingzhidongjinglianga.html">明治东京恋伽</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/xueyinglingzhu.html" target="_blank" title="雪鹰领主">*/}}
+                            {{/*<img src="/uploads/allimg/181221/f0efd68b51927e9d.jpg" alt="雪鹰领主">*/}}
+                            {{/*<button class="hdtag">更新至13集/共24集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="雪鹰领主" href="/m/xueyinglingzhu.html">雪鹰领主</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/zuqiuxiaojiang_xinzuqiuxiaojiang.html" target="_blank" title="足球小将/新足球小将">*/}}
+                            {{/*<img src="/uploads/allimg/181214/9bf32fe673732562.jpg" alt="足球小将/新足球小将">*/}}
+                            {{/*<button class="hdtag">更新至48集/共52集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="足球小将/新足球小将" href="/m/zuqiuxiaojiang_xinzuqiuxiaojiang.html">足球小将/新足球小将</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/shaoniantaitanchujidiwuji.html" target="_blank" title="少年泰坦出击第五季">*/}}
+                            {{/*<img src="/uploads/allimg/180706/2477bba76e53a2e3.jpg" alt="少年泰坦出击第五季">*/}}
+                            {{/*<button class="hdtag">更新至23集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="少年泰坦出击第五季" href="/m/shaoniantaitanchujidiwuji.html">少年泰坦出击第五季</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/xunixiaojiezaikanzhuoni.html" target="_blank" title="虚拟小姐在看着你">*/}}
+                            {{/*<img src="/uploads/allimg/190112/1cd75c64ac02b111.jpg" alt="虚拟小姐在看着你">*/}}
+                            {{/*<button class="hdtag">第07集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="虚拟小姐在看着你" href="/m/xunixiaojiezaikanzhuoni.html">虚拟小姐在看着你</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/xiongbinglian2zhutianjianglin.html" target="_blank" title="雄兵连2诸天降临">*/}}
+                            {{/*<img src="/uploads/allimg/190127/8bacce16cf88baf9.jpg" alt="雄兵连2诸天降临">*/}}
+                            {{/*<button class="hdtag">第08集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="雄兵连2诸天降临" href="/m/xiongbinglian2zhutianjianglin.html">雄兵连2诸天降临</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/huajianghuzhibuliangrendisanji.html" target="_blank" title="画江湖之不良人第三季">*/}}
+                            {{/*<img src="/uploads/allimg/181028/eb9fdc4f9373a601.jpg" alt="画江湖之不良人第三季">*/}}
+                            {{/*<button class="hdtag">第21集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="画江湖之不良人第三季" href="/m/huajianghuzhibuliangrendisanji.html">画江湖之不良人第三季</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/xinzhuanzuyiwenlutiejuchangban.html" target="_blank" title="新撰组异闻录~铁~剧场版">*/}}
+                            {{/*<img src="/uploads/allimg/181025/53afb92bf0d5608a.jpg" alt="新撰组异闻录~铁~剧场版">*/}}
+                            {{/*<button class="hdtag">第02集大结局</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="新撰组异闻录~铁~剧场版" href="/m/xinzhuanzuyiwenlutiejuchangban.html">新撰组异闻录~铁~剧场版</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/xiamuyourenzhang_jieyuankongchan.html" target="_blank" title="夏目友人帐：结缘空蝉">*/}}
+                            {{/*<img src="/uploads/allimg/190308/f74de5759662c1a6.jpg" alt="夏目友人帐：结缘空蝉">*/}}
+                            {{/*<button class="hdtag">TC日语中字</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="夏目友人帐：结缘空蝉" href="/m/xiamuyourenzhang_jieyuankongchan.html">夏目友人帐：结缘空蝉</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/ouxianghuodongdiqiji.html" target="_blank" title="偶像活动第七季">*/}}
+                            {{/*<img src="/uploads/allimg/180412/f24f9fd6f96f28c6.jpg" alt="偶像活动第七季">*/}}
+                            {{/*<button class="hdtag">第47集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="偶像活动第七季" href="/m/ouxianghuodongdiqiji.html">偶像活动第七季</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
+                     {{/**/}}
+                    {{/*<div class="box-item">*/}}
+                        {{/*<a class="item-link" href="/m/fuchouzhejijiediwuji.html" target="_blank" title="复仇者集结第五季">*/}}
+                            {{/*<img src="/uploads/allimg/181001/f27b61c4cff9df60.jpg" alt="复仇者集结第五季">*/}}
+                            {{/*<button class="hdtag">第22集</button>*/}}
+                        {{/*</a>*/}}
+                        {{/*<div class="meta">*/}}
+                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="复仇者集结第五季" href="/m/fuchouzhejijiediwuji.html">复仇者集结第五季</a></div>*/}}
+                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
+                        {{/*</div>*/}}
+                    {{/*</div>*/}}
                     
                 </div>
             </div>
             <div class="pagenav">
                 <ul class="pagination">
                 <li class="disabled"><a href="javascript:void(0);">当前第1/444页</a></li>
-                <li><a target="_self" href="/y/dongman.html" class="pagelink_a">首页</a></li>
+
+                <!-- 索引不为0，显示首页 -->
+                <!-- 等于eq    不等于ne   -->
+                {{if ne .Page -1}}
+                <li><a target="_self" href="/damao/damao?page=1&limit=30" class="pagelink_a">首页</a></li>
+                {{end}}
+
+
+                <li><a target="_self" href="/damao/damao?page={{.PageFront}}&limit=30" class="pagelink_a">上一页</a></li>
+
+
+
+
+
+
+
+                
+                {{range $index, $elem := .PageSize}}
+                    {{if eq $.Page $elem}}
+                        <li><span style="color:red;font-weight:bold;">{{ . }}</span></li>
+                    {{else}}
+                        <li class="mbnone">
+                            <a target="_self" class="pagelink_b" href="/damao/damao?page={{ . }}&limit=30">{{ . }}</a>
+                        </li>
+                    {{end}}
+                {{end}}
+
                 
                 
                 
-                <li><span style="color:red;font-weight:bold;">1</span></li>
+                <li><a target="_self" href="/damao/damao?page={{.PageNext}}&limit=30" class="pagelink_a">下一页</a></li>
                 
-                
-                
-                <li class="mbnone"><a target="_self" class="pagelink_b" href="/y/dongman2.html">2</a></li>
-                
-                
-                
-                <li class="mbnone"><a target="_self" class="pagelink_b" href="/y/dongman3.html">3</a></li>
-                
-                
-                
-                <li class="mbnone"><a target="_self" class="pagelink_b" href="/y/dongman4.html">4</a></li>
-                
-                
-                
-                <li class="mbnone"><a target="_self" class="pagelink_b" href="/y/dongman5.html">5</a></li>
-                
-                
-                
-                <li class="mbnone"><a target="_self" class="pagelink_b" href="/y/dongman6.html">6</a></li>
-                
-                
-                
-                <li class="mbnone"><a target="_self" class="pagelink_b" href="/y/dongman7.html">7</a></li>
-                
-                
-                
-                <li><a target="_self" href="/y/dongman2.html" class="pagelink_a">下一页</a></li>
-                
-                <li><a target="_self" href="/y/dongman444.html" class="pagelink_a">尾页</a></li>
+                <li><a target="_self" href="" class="pagelink_a">尾页</a></li>
                 </ul>
             </div>
         </section>

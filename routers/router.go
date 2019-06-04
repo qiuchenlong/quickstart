@@ -6,10 +6,16 @@ import (
 )
 
 func init() {
-    // 首页
+    //beego.Router("/", &controllers.DamaoController{})
     beego.Router("/", &controllers.MainController{})
-    // 详情页
-    beego.Router("/detail", &controllers.DetailController{})
+    beego.AutoRouter(&controllers.DamaoController{})
+    beego.Router("/detail", &controllers.DamaoDetailController{})
+
+
+    //// 首页
+    //beego.Router("/", &controllers.MainController{})
+    //// 详情页
+    //beego.Router("/detail", &controllers.DetailController{})
     // 搜索页
     beego.Router("/search", &controllers.SearchController{})
     // beego.Router("/user", &controllers.UserController{})

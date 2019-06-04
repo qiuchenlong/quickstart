@@ -27,7 +27,9 @@ func (self *DetailController) Get() {
 	self.Data["published_at"] = published_at
 
 	// 模板
-	self.TplName = "detail.html"
+	//self.TplName = "detail.html"
+	//self.TplName = "detail.tpl"
+	self.TplName = "damao_detail.html"
 }
 
 

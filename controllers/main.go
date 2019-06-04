@@ -20,7 +20,10 @@ type MainController struct {
 }
 
 func (c *MainController) Get() {
-	c.Data["Website"] = "爱播"
-	// c.Data["Email"] = "astaxie@gmail.com"
-	c.TplName = "index.html"
+	//c.Data["Website"] = "爱播"
+	//// c.Data["Email"] = "astaxie@gmail.com"
+	//c.TplName = "damao.html"
+	////c.TplName = "list.html"
+
+	c.Redirect("/damao/damao", 302)
 }

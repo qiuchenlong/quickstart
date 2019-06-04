@@ -74,6 +74,20 @@ func (self *BaseController) display(tpl ...string) {
 	self.TplName = tplname
 }
 
+func (self *BaseController) displayTpl(tpl ...string) {
+	var tplname string
+	if len(tpl) > 0 {
+		// 拼接真实的html页面名称
+		tplname = strings.Join([]string{tpl[0], "tpl"}, ".")
+	} else {
+		// 没有传
+		tplname = self.controllerName + "/" + self.actionName + ".tpl"
+	}
+
+	self.TplName = tplname
+}
+
+
 
 // ajax返回
 func (self *BaseController) ajaxMsg(msg interface{}, msgno int) {
