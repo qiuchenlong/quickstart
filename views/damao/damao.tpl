@@ -217,7 +217,7 @@
         <div class="head">
     
             <div class="logo">
-                <a href="/">爱播</a>
+                <a href="/damao/damao">爱播</a>
             </div>
 
             <div class="search-box">
@@ -239,31 +239,31 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">爱播</a>
+                    <a class="navbar-brand" href="/damao/damao">爱播</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar_menu">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">首页</a></li>
+                        <li><a href="/damao/damao">首页</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="#">电影</a></li>
+                        <li><a href="/damao/damao">电影</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="#">电视剧</a></li>
+                        <li><a href="/damao/damao">电视剧</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="#">直播</a></li>
+                        <li><a href="/damao/damao">直播</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="#">福利</a></li>
+                        <li><a href="/damao/damao">福利</a></li>
                     </ul>
-                    <form class="navbar-form navbar-left navbar-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="搜索视频">
-                    </div>
-                    <button type="submit" class="btn btn-default">搜索</button>
-                </form>
+                    <form class="navbar-form navbar-left navbar-right" role="search" action="/damao/damao" method="get">
+                        <div class="form-group">
+                            <input name="searchword" type="text" class="form-control" placeholder="搜索视频">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
                 </div>
 
                 
@@ -286,7 +286,7 @@
                      {{if eq $.Type $elem.type}}
                      class="active"
                      {{end}}
-                     href="/damao/damao?page=2&limit=30&type={{$elem.type}}">{{$elem.name}}</a>
+                     href="/damao/damao?page=1&limit=30&type={{$elem.type}}&searchword={{ $.SearchWord }}">{{$elem.name}}</a>
                     {{end}}
                     
 
@@ -307,7 +307,7 @@
                      {{if eq $.Category $elem.category}}
                      class="active"
                      {{end}}
-                     href="/damao/damao?page=2&limit=30&category={{$elem.category}}">{{$elem.name}}</a>
+                     href="/damao/damao?page=1&limit=30&category={{$elem.category}}&searchword={{ $.SearchWord }}">{{$elem.name}}</a>
                     {{end}}
 
                     </li>
@@ -548,11 +548,11 @@
                 <!-- 索引不为0，显示首页 -->
                 <!-- 等于eq    不等于ne   -->
                 {{if ne .Page -1}}
-                <li><a target="_self" href="/damao/damao?page=1&limit=30" class="pagelink_a">首页</a></li>
+                <li><a target="_self" href="/damao/damao?page=1&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">首页</a></li>
                 {{end}}
 
 
-                <li><a target="_self" href="/damao/damao?page={{.PageFront}}&limit=30" class="pagelink_a">上一页</a></li>
+                <li><a target="_self" href="/damao/damao?page={{.PageFront}}&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">上一页</a></li>
 
 
 
@@ -566,7 +566,7 @@
                         <li><span style="color:red;font-weight:bold;">{{ . }}</span></li>
                     {{else}}
                         <li class="mbnone">
-                            <a target="_self" class="pagelink_b" href="/damao/damao?page={{ . }}&limit=30">{{ . }}</a>
+                            <a target="_self" class="pagelink_b" href="/damao/damao?page={{ . }}&limit=30&searchword={{ $.SearchWord }}">{{ . }}</a>
                         </li>
                     {{end}}
                 {{end}}
@@ -574,7 +574,7 @@
                 
                 
                 
-                <li><a target="_self" href="/damao/damao?page={{.PageNext}}&limit=30" class="pagelink_a">下一页</a></li>
+                <li><a target="_self" href="/damao/damao?page={{.PageNext}}&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">下一页</a></li>
                 
                 <li><a target="_self" href="" class="pagelink_a">尾页</a></li>
                 </ul>
@@ -648,7 +648,17 @@
         var player=new ckplayer(videoObject);
     }
 
-    
+
+    // 获取url参数部分
+    function GetUrlPara()
+    {
+　　　　 var url = document.location.toString();
+　　　　 var arrUrl = url.split("?");
+
+　　　　 var para = arrUrl[1];
+alert(para)
+　　　　 return para;
+    }
 
 
 

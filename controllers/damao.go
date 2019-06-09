@@ -16,28 +16,46 @@ type DamaoController struct {
 }
 
 func (self *DamaoController) Damao() {
+	// 分类
 	ctype, err := self.GetInt("type")
 	if err != nil {
 		ctype = 1
 	}
+	// 类型
 	category, err := self.GetInt("category")
 	if err != nil {
 		category = 1
 	}
-	//列表
+	// 列表
 	page, err := self.GetInt("page")
 	if err != nil {
 		page = 1
 	}
+	// 没页的大小
 	limit, err := self.GetInt("limit")
 	if err != nil {
 		limit = 30
 	}
-
+	if limit > 30 {
+		limit = 30
+	}
 	self.pageSize = limit
 
+	// 查询名字
+	searchword := self.GetString("searchword")
+
 	// 查询条件
-	filters := make([]interface{}, 0)
+	filters := make([]interface{}, 1)
+	map1 := make(map[string]string)
+	//map1["Id"] = "1"
+	map1["Name"] = searchword
+
+	if ctype > 0 {
+		//map1["TypeId"] = strconv.Itoa(ctype)
+	}
+
+
+	filters[0] = map1
 	filters = append(filters)
 	result, count := models.DamaoGetList(page, self.pageSize, filters...)
 	list := make([]map[string]interface{}, len(result))
@@ -52,6 +70,7 @@ func (self *DamaoController) Damao() {
 		row["url"] = v.Url
 
 		if strings.Contains(v.Url, "rtmp") ||
+			strings.Contains(v.Url, ".mp4") ||
 			strings.Contains(v.Url, ".m3u8") {
 			row["url"] = "https://www.qiuchenlong.top/damaodetail/detail?playurl=" + v.Url + "&name=" + v.Name
 		}
@@ -78,6 +97,9 @@ func (self *DamaoController) Damao() {
 
 	self.Data["Type"] = ctype
 	self.Data["Types"] = types
+
+	self.Data["SearchWord"] = searchword
+	fmt.Println(searchword)
 
 	self.Data["Category"] = category
 	self.Data["Categorys"] = categorys

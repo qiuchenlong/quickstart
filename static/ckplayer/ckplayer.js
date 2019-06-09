@@ -185,7 +185,7 @@ function ckplayerConfig() {
 			crossorigin: '',//设置html5视频的crossOrigin属性
 			crossdomain: '',//安全策略文件地址
 			unescape: false,//默认flashplayer里需要解码
-			mobileCkControls: false,//移动端h5显示控制栏
+			mobileCkControls: true,//移动端h5显示控制栏
 			mobileAutoFull: true,//移动端是否默认全屏播放
 			playbackrate: 1,//默认倍速
 			h5container: '',//h5环境中使用自定义容器

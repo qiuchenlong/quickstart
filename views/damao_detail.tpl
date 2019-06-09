@@ -214,7 +214,7 @@
             </div>
 
             <div class="search-box">
-                <form name="formsearch" id="formsearch" action="/search.php" method="post" target="_blank" autocomplete="off">
+                <form name="formsearch" id="formsearch" action="/" method="post" target="_blank" autocomplete="off">
                     <input type="text" id="keyword" name="searchword" class="search-input" value="搜索视频" onfocus="if(this.value=='搜索视频'){this.value='';}" onblur="if(this.value==''){this.value='搜索视频';};">
                     <input type="submit" id="searchbutton" class="search-button" value="搜索">
                 </form>
@@ -274,6 +274,7 @@
             var videoObject = {
                 container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
                 variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+                autoplay: true,
                 flashplayer:false,//如果强制使用flashplayer则设置成true
                 video:'https://www.qiuchenlong.top/st1/yinyuetai_001.mp4'//视频地址
             };

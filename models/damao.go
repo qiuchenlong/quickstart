@@ -1,6 +1,9 @@
 package models
 
-import "github.com/astaxie/beego/orm"
+import (
+	"github.com/astaxie/beego/orm"
+	"fmt"
+)
 
 type Damao struct {
 	// 索引
@@ -42,10 +45,26 @@ func DamaoGetList(page, pageSize int, filters ...interface{}) ([]*Damao, int64) 
 	offset := (page - 1) * pageSize
 	list := make([]*Damao, 0)
 	query := orm.NewOrm().QueryTable(TableName(TABLE_NAME))
+	//if len(filters) > 0 {
+	//	l := len(filters)
+	//	for k := 0; k < l; k += 2 {
+	//		query = query.Filter(filters[k].(string), filters[k + 1])
+	//	}
+	//}
+
 	if len(filters) > 0 {
 		l := len(filters)
-		for k := 0; k < l; k += 2 {
-			query = query.Filter(filters[k].(string), filters[k + 1])
+		for k := 0; k < l; k += 1 {
+			map1 := filters[k].(map[string]string)
+			for k, v := range map1 {
+				fmt.Println(k)
+				fmt.Println(v)
+				if k == "TypeId" {
+					query = query.Filter(k , v)
+				} else {
+					query = query.Filter(k + "__icontains", v)
+				}
+			}
 		}
 	}
 	total, _ := query.Count()
@@ -53,3 +72,21 @@ func DamaoGetList(page, pageSize int, filters ...interface{}) ([]*Damao, int64) 
 
 	return list, total;
 }
+
+
+// 按分类查询
+//func DamaoGetListByCategory(page, pageSize , pageType int, filters ...interface{}) ([]*Damao, int64) {
+//	offset := (page - 1) * pageSize
+//	list := make([]*Damao, 0)
+//	query := orm.NewOrm().QueryTable(TableName(TABLE_NAME))
+//	if len(filters) > 0 {
+//		l := len(filters)
+//		for k := 0; k < l; k += 2 {
+//			query = query.Filter(filters[k].(string), filters[k + 1])
+//		}
+//	}
+//	total, _ := query.Count()
+//	query.OrderBy("-id").Limit(pageSize, offset).All(&list)
+//
+//	return list, total;
+//}
