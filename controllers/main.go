@@ -25,6 +25,6 @@ func (c *MainController) Get() {
 	//c.TplName = "damao.html"
 	////c.TplName = "list.html"
 
-	//c.Redirect("/damao/damao", 302)
-	c.Redirect("/douyin/list", 302)
+	c.Redirect("/damao/damao", 302)
+	//c.Redirect("/douyin/list", 302)
 }
