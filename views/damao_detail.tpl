@@ -296,8 +296,7 @@
         </div>
 
 
-<video src="http://220.194.238.108/13/f/b/i/t/fbitdfsnjxunvfisflicexgyqddjqz/hc.yinyuetai.com/6A92016B1BEFBF8BBC2D5147F80FF518.mp4?sc=9a9d5d2647f4c086" controls="controls">
-</video>
+
 
 
 
