@@ -159,14 +159,14 @@
     padding: 0 20px;
     background-color: #fff;
     border: 1px solid #e6e6e6;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 16px;
 	margin-bottom:10px;
 }
 .cascade ul {
 	position: relative;
 	overflow:hidden;
-	padding-left: 60px;
+	padding-left: 90px;
     border-top: 1px dashed #e6e6e6;
 }
 .cascade ul:first-child{
@@ -177,7 +177,7 @@
 }
 .cascade ul li.casl-l{
     position: absolute;
-	width:60px;
+	width:90px;
 	line-height: 35px;
 	left:0;
 	color:#999;

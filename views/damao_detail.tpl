@@ -266,8 +266,8 @@
 	
 	<div class="main">
         
-
-        <h1 class="movie-title">湖南卫视 - live</h1>
+<!-- 湖南卫视 - live -->
+        <h1 class="movie-title">{{ .Name }}</h1>
 
         <div id="video" style="width:100%; height:500px"></div>
         <!-- <script type="text/javascript">
@@ -353,6 +353,9 @@
             url = "http://cctv5cncw.v.wscdns.com/live/cctv5_1/index.m3u8?contentid=2820180516001";
 
             url = "rtmp://58.200.131.2:1935/livetv/hunantv"
+
+            url = {{ .Playurl }}
+
             init_video_player(url);
 
 

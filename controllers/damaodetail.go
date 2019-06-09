@@ -14,12 +14,15 @@ type DamaoDetailController struct {
 	BaseController
 }
 
-func (self *DamaoDetailController) Get() {
+func (self *DamaoDetailController) Detail() {
 
-	id := self.GetString("id")
+	name := self.GetString("name");
+	playurl := self.GetString("playurl")
 
-	fmt.Println(id)
+	fmt.Println(playurl)
 
 	self.Data["Website"] = "爱播"
-	self.TplName = "damao_detail.html"
+	self.Data["Playurl"] = playurl
+	self.Data["Name"] = name
+	self.TplName = "damao_detail.tpl"
 }

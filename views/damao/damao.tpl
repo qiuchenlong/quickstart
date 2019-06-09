@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>爱播</title>
+    <title>爱播 - ibo</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -62,7 +62,7 @@
             word-break: break-all;
             word-wrap: break-word;
             font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",Arial,sans-serif;
-            font-size: 14px;
+            font-size: 18px;
             background-color: #F6F5F6;
         }
 
@@ -133,6 +133,11 @@
 
         .navbar-default .navbar-brand {
             color: #fff;
+        }
+
+
+        .navbar-brand {
+            font-size: 36px;
         }
 
 

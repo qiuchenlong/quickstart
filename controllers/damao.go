@@ -8,6 +8,7 @@ package controllers
 import (
 	"quickstart/models"
 	"fmt"
+	"strings"
 )
 
 type DamaoController struct {
@@ -47,7 +48,13 @@ func (self *DamaoController) Damao() {
 		row["name"] = v.Name
 		row["description"] = v.Description
 		row["image"] = v.Image
+
 		row["url"] = v.Url
+
+		if strings.Contains(v.Url, "rtmp") ||
+			strings.Contains(v.Url, ".m3u8") {
+			row["url"] = "http://127.0.0.1:8081/damaodetail/detail?playurl=" + v.Url + "&name=" + v.Name
+		}
 		list[k] = row
 	}
 
