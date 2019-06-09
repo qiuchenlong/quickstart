@@ -296,6 +296,9 @@
         </div>
 
 
+<video src="http://220.194.238.108/13/f/b/i/t/fbitdfsnjxunvfisflicexgyqddjqz/hc.yinyuetai.com/6A92016B1BEFBF8BBC2D5147F80FF518.mp4?sc=9a9d5d2647f4c086" controls="controls">
+</video>
+
 
 
         <div class="panel-heading" style="display: none;"><strong><mb class="mbnone">《和平饭店》 - </mb>kuyun在线视频 (支持手机)高清资源 - 在线播放 - 如果不能播放请换一个播放通道：</strong></div>
