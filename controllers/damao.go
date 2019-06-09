@@ -53,7 +53,7 @@ func (self *DamaoController) Damao() {
 
 		if strings.Contains(v.Url, "rtmp") ||
 			strings.Contains(v.Url, ".m3u8") {
-			row["url"] = "http://127.0.0.1:8081/damaodetail/detail?playurl=" + v.Url + "&name=" + v.Name
+			row["url"] = "https://www.qiuchenlong.top/damaodetail/detail?playurl=" + v.Url + "&name=" + v.Name
 		}
 		list[k] = row
 	}
