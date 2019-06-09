@@ -35,7 +35,7 @@
             width: 100%;
             margin: 0 auto;
             padding: 0;
-            background: #fff;
+            background: #D0E6A5;
             margin-bottom: 5px;
             display: block;
         }
@@ -63,7 +63,7 @@
             word-wrap: break-word;
             font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",Arial,sans-serif;
             font-size: 18px;
-            background-color: #F6F5F6;
+            background-color: #86E3CE;//#F6F5F6;
         }
 
         a:link {
@@ -110,14 +110,16 @@
 
         .navbar {
             /*height: 40px;*/
-            background: #07a7e1;
+            background-image: -webkit-linear-gradient(to top, #86E3CE, #DDE6A5);
+            background-image: -o-linear-gradient(left, #86E3CE, #DDE6A5);
+            background-image: linear-gradient(to top , #86E3CE, #DDE6A5);
             /* background: transparent; */
             border: 0px;
             border-radius: 0px;
         }
 
         .navbar-nav:hover {
-            background: skyblue;
+            background: #FA897B;//skyblue;
         }
 
         .container-fluid {
@@ -125,14 +127,19 @@
             margin: 0 auto;
         }        
         .navbar-default .navbar-nav>li>a {
-            color: #fff;
+            color: #000000;
         }
         .navbar-default .navbar-nav>li>a:hover {
-            color: #fff;
+            color: #000000;
         }
 
         .navbar-default .navbar-brand {
-            color: #fff;
+            color: #000000;
+        }
+
+        .navbar-default .navbar-brand:hover {
+            color: #000000;
+            background: #FA897B;
         }
 
 
@@ -145,7 +152,7 @@
        
         .btn-default{
             color: #fff;
-            background: #337ab7;
+            background: #FFC988;//#337ab7;
         }
 
         

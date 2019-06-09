@@ -32,7 +32,7 @@
 	float:right;
 }
 .main-container .box-title span a {
-    color: #FB0606;
+    color: #FA897B;
     padding-right: 12px;
     font-size: 14px;
     margin-top: 6px;
@@ -95,7 +95,7 @@
 	height:20px;
 }
 .main-container .box-body .box-item .meta .item-name a {
-    font-size: 14px;
+    font-size: 18px;
     color: #333;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -105,7 +105,7 @@
     float: left;
 }
 .main-container .box-body .box-item .meta em {
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     color: #8c8c8c;
 }
@@ -157,7 +157,7 @@
 .cascade {
 	overflow:hidden;
     padding: 0 20px;
-    background-color: #fff;
+    /*background-color: #fff;*/
     border: 1px solid #e6e6e6;
     font-size: 16px;
     line-height: 16px;
@@ -191,7 +191,7 @@
 	color:#222;
 }
 .cascade ul li a.active {
-	color:red;
+	color: #F56A79;
 	font-weight:bold;
 }
 
