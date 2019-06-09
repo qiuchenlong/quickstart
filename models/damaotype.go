@@ -2,46 +2,36 @@ package models
 
 import "github.com/astaxie/beego/orm"
 
-type Damao struct {
+type DamaoType struct {
 	// 索引
 	Id          int
 	// 名称
 	Name        string
-	// 描述
-	Description string
-	// 图片
-	Image       string
-	// URL
-	Url         string
+	// 类型
+	Type        int
 	// 添加时间
 	CreateTime  int64
 	// 更新时间
 	UpdateTime  int64
-
-	// 分类
-	TypeId      int
-	// 类别
-	CategoryId  int
-
 }
 
-const TABLE_NAME string = "tb_damao"
+const TABLE_NAME_DAMAO_Type string = "tb_damao_type"
 
 // 表名
-func (d *Damao) TableName() string {
-	return TableName(TABLE_NAME)
+func (d *DamaoType) TableName() string {
+	return TableName(TABLE_NAME_DAMAO_Type)
 }
 
 // 添加
-func DamaoAdd(d *Damao) (int64, error) {
+func DamaoTypeAdd(d *DamaoType) (int64, error) {
 	return orm.NewOrm().Insert(d)
 }
 
 // 查询
-func DamaoGetList(page, pageSize int, filters ...interface{}) ([]*Damao, int64) {
+func DamaoTypeGetList(page, pageSize int, filters ...interface{}) ([]*DamaoType, int64) {
 	offset := (page - 1) * pageSize
-	list := make([]*Damao, 0)
-	query := orm.NewOrm().QueryTable(TableName(TABLE_NAME))
+	list := make([]*DamaoType, 0)
+	query := orm.NewOrm().QueryTable(TableName(TABLE_NAME_DAMAO_Type))
 	if len(filters) > 0 {
 		l := len(filters)
 		for k := 0; k < l; k += 2 {

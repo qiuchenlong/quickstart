@@ -15,6 +15,10 @@ type DamaoController struct {
 }
 
 func (self *DamaoController) Damao() {
+	ctype, err := self.GetInt("type")
+	if err != nil {
+		ctype = 1
+	}
 	category, err := self.GetInt("category")
 	if err != nil {
 		category = 1
@@ -57,12 +61,16 @@ func (self *DamaoController) Damao() {
 
 	pages := pageEditor(self.pageSize, page)
 
+	types := getType()
 	categorys := getCategory()
 
 
 
 
 	self.Data["Website"] = "爱播"
+
+	self.Data["Type"] = ctype
+	self.Data["Types"] = types
 
 	self.Data["Category"] = category
 	self.Data["Categorys"] = categorys
@@ -81,6 +89,24 @@ func (self *DamaoController) Damao() {
 }
 
 
+// 获取类别
+func getType() []map[string]interface{} {
+	result, tpyeCount := models.DamaoTypeGetList(0, 10)
+	fmt.Println(result, tpyeCount)
+
+	list := make([]map[string]interface{}, len(result))
+	for k, v := range result {
+		row := make(map[string]interface{})
+		row["id"] = v.Id
+		row["name"] = v.Name
+		row["type"] = v.Type
+		list[k] = row
+	}
+	arrayReverse(list)
+	return list
+}
+
+
 // 获取分类
 func getCategory() []map[string]interface{} {
 	result, categoryCount := models.DamaoCategoryGetList(0, 10)
@@ -91,13 +117,19 @@ func getCategory() []map[string]interface{} {
 		row := make(map[string]interface{})
 		row["id"] = v.Id
 		row["name"] = v.Name
-		row["type"] = v.Type
+		row["category"] = v.Type
 		list[k] = row
 	}
-	//for i, j := 0, len(list)-1; i < j; i, j = i + 1, j -1 {
-	//	list[i], list[j] = list[j], list[i]
-	//}
+	arrayReverse(list)
 	return list
+}
+
+
+// 数组排序
+func arrayReverse(list []map[string]interface{}) {
+	for i, j := 0, len(list)-1; i < j; i, j = i + 1, j -1 {
+		list[i], list[j] = list[j], list[i]
+	}
 }
 
 

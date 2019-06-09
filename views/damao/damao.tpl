@@ -276,12 +276,12 @@
                     <li class="casl-r">
 
 
-                    {{range $index, $elem := .Categorys}}
+                    {{range $index, $elem := .Types}}
                     <a
-                     {{if eq $.Category $elem.type}}
+                     {{if eq $.Type $elem.type}}
                      class="active"
                      {{end}}
-                     href="/damao/damao?page=2&limit=30&category={{$elem.type}}">{{$elem.name}}</a>
+                     href="/damao/damao?page=2&limit=30&type={{$elem.type}}">{{$elem.name}}</a>
                     {{end}}
                     
 
@@ -294,45 +294,21 @@
                 <ul>
                     <li class="casl-l">按剧情：</li>
                     <li class="casl-r">
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E8%B0%8D%E6%88%98">谍战</a>
+                    <!-- <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E8%B0%8D%E6%88%98">谍战</a> -->
                     
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E6%AD%A6%E4%BE%A0">武侠</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E8%AD%A6%E5%8C%AA">警匪</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E6%82%AC%E7%96%91">悬疑</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E9%AD%94%E5%B9%BB">魔幻</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E6%83%8A%E6%82%9A">惊悚</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E5%8A%A8%E7%94%BB">动画</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E6%88%98%E4%BA%89">战争</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E8%BF%90%E5%8A%A8">运动</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E9%99%90%E5%88%B6%E7%BA%A7">限制级</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E6%81%90%E6%80%96">恐怖</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E7%88%B1%E6%83%85">爱情</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E5%8A%B1%E5%BF%97">励志</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E5%86%92%E9%99%A9">冒险</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E5%8F%A4%E8%A3%85">古装</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E5%AE%B6%E5%BA%AD">家庭</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E5%83%B5%E5%B0%B8">僵尸</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E5%84%BF%E7%AB%A5">儿童</a>
+
+                    {{range $index, $elem := .Categorys}}
+                    <a
+                     {{if eq $.Category $elem.category}}
+                     class="active"
+                     {{end}}
+                     href="/damao/damao?page=2&limit=30&category={{$elem.category}}">{{$elem.name}}</a>
+                    {{end}}
+
                     </li>
                     
                 </ul>
-                <ul>
+                <ul style="display: none;">
                     <li class="casl-l">按地区：</li>
                     <li class="casl-r">
                     <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E5%A4%A7%E9%99%86">大陆</a>
@@ -352,7 +328,7 @@
                     <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E5%85%B6%E4%BB%96">其他</a>
                     </li>   
                 </ul>
-                <ul>
+                <ul style="display: none;">
                     <li class="casl-l">按年份：</li>
                     <li class="casl-r">
                     <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2018">2018</a>
