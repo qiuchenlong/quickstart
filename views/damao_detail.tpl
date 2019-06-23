@@ -23,6 +23,13 @@
 
 
 
+<link href="//vjs.zencdn.net/7.3.0/video-js.min.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/7.3.0/video.min.js"></script>
+
+<script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+
+
+<script src="/static/js/videojs-contrib-hls.js"></script>
 
 
 
@@ -269,7 +276,7 @@
 <!-- 湖南卫视 - live -->
         <h1 class="movie-title">{{ .Name }}</h1>
 
-        <div id="video" style="width:100%; height:500px"></div>
+        <div id="video" style="width:100%; height:500px; display:none;"></div>
         <!-- <script type="text/javascript">
             var videoObject = {
                 container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
@@ -280,6 +287,19 @@
             };
             var player=new ckplayer(videoObject);
         </script> -->
+
+
+<video id=example-video style="width:100%; height:540px;" class="video-js vjs-default-skin" controls>
+  <source
+     src="{{ .Playurl }}"
+     type="application/x-mpegURL">
+</video>
+
+<script>
+var player = videojs('example-video');
+player.play();
+</script>
+
 
 
         <div class="panel-footer" style="display: none;">
@@ -359,7 +379,7 @@
 
             url = {{ .Playurl }}
 
-            init_video_player(url);
+            //init_video_player(url);
 
 
         });
