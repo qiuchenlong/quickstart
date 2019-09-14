@@ -22,207 +22,28 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
+    <!-- 引入 normalize.css -->
+
+
+
+
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 
 
 
+    <link rel="stylesheet" type="text/css" href="/static/css/damao.css">
 
-
-
-    <style type="text/css">
-
-        header {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-            background: #D0E6A5;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        header .head {
-            width: 100%;
-            margin: 0 auto;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            padding-right: 0;
-            overflow: hidden;
-            max-width: 1000px;
-        }
-
-        div {
-            display: block;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            color: #666;
-            word-break: break-all;
-            word-wrap: break-word;
-            font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",Arial,sans-serif;
-            font-size: 18px;
-            background-color: #86E3CE;//#F6F5F6;
-        }
-
-        a:link {
-            color: #333;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #f60;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        a:visited {
-            color: #333;
-            text-decoration: none;
-        }
-
-    
-
-
-    
-        header .head .logo {
-            float: left;
-            width: 468px;
-            height: 60px;
-            background: url(/static/img/logo.png) 0 0 repeat;
-        }
-        
-        header .head .logo a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-indent: -9999px;
-        }
-
-        header .head .search-box {
-            float: right;
-            height: 50px;
-            line-height: 50px;
-            display: none;
-        }
-
-
-        .navbar {
-            /*height: 40px;*/
-            background-image: -webkit-linear-gradient(to top, #86E3CE, #DDE6A5);
-            background-image: -o-linear-gradient(left, #86E3CE, #DDE6A5);
-            background-image: linear-gradient(to top , #86E3CE, #DDE6A5);
-            /* background: transparent; */
-            border: 0px;
-            border-radius: 0px;
-        }
-
-        .navbar-nav:hover {
-            background: #FA897B;//skyblue;
-        }
-
-        .container-fluid {
-            width: 100%;
-            margin: 0 auto;
-        }        
-        .navbar-default .navbar-nav>li>a {
-            color: #000000;
-        }
-        .navbar-default .navbar-nav>li>a:hover {
-            color: #000000;
-        }
-
-        .navbar-default .navbar-brand {
-            color: #000000;
-        }
-
-        .navbar-default .navbar-brand:hover {
-            color: #000000;
-            background: #FA897B;
-        }
-
-
-        .navbar-brand {
-            font-size: 36px;
-        }
-
-
-
-       
-        .btn-default{
-            color: #fff;
-            background: #FFC988;//#337ab7;
-        }
-
-        
-        .main {
-            width: 100%;
-            margin: 0 auto;
-            padding: 15px;
-            background: #fff;
-            min-height: 500px;
-            border-radius: 5px;
-            padding: 15px;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        .movie-title {
-            font-size: 24px;
-            font-weight: 500;
-            color: #333;
-            width: 100%;
-            margin: 0 0 15px;
-        }
-    
-
-        .panel .panel-heading {
-            padding: 10px 15px;
-            border-bottom: 1px solid transparent;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-            color: #333;
-            background-color: #f5f5f5;
-            border-color: #ddd;
-        }
-
-        .dslist-group {
-            margin-top: 5px;
-            margin-left: 4px;
-            padding-left: 0px;
-            margin-bottom: 5px;
-            overflow: hidden;
-        }
-        .dslist-group li {
-            word-break: keep-all;
-            overflow: hidden;
-            padding: 8px 1px;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            float: left;
-        }
-        .dslist-group li a {
-            background-color: #e6e6e6;
-            border-color: #e6e6e6;
-            color: #444444;
-            margin: 3px;
-            padding: 5px 12px 5px 10px;
-            text-decoration: none;
-        }
-
-    </style>
 
     <link rel="stylesheet" href="/static/css/dropload.css">
 
-    <script src="/static/ckplayer/ckplayer.js"></script>
 
 </head>
 <body onload="load()">
 
+
     <header>
         <div class="head">
-    
+
             <div class="logo">
                 <a href="/damao/damao">爱播</a>
             </div>
@@ -260,7 +81,7 @@
                         <li><a href="/damao/damao">电视剧</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="/damao/damao">直播</a></li>
+                        <li><a href="/damao/live">直播</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
                         <li><a href="/damao/damao">福利</a></li>
@@ -273,330 +94,76 @@
                     </form>
                 </div>
 
-                
+
             </div>
         </nav>
     </header>
-	
-	<!-- <div class="main"> -->
-        
-
-        <section class="main-container">
-            <div class="cascade">
-                <ul>
-                    <li class="casl-l">按分类：</li>
-                    <li class="casl-r">
 
 
-                    {{range $index, $elem := .Types}}
-                    <a
-                     {{if eq $.Type $elem.type}}
-                     class="active"
-                     {{end}}
-                     href="/damao/damao?page=1&limit=30&type={{$elem.type}}&searchword={{ $.SearchWord }}">{{$elem.name}}</a>
-                    {{end}}
-                    
+    <section class="main-container">
+        <div class="row-five">
+            <div class="box-title"><b>最新动漫：</b></div>
+            <div class="box-body">
 
-                    <!-- <a href="/y/dianshiju.html">电视剧</a> -->
-                    
-                    <!-- <a class="active" href="/y/dongman.html">动漫</a> -->
-                    
-                    </li>
-                </ul>
-                <ul>
-                    <li class="casl-l">按剧情：</li>
-                    <li class="casl-r">
-                    <!-- <a href="/search.php?searchtype=5&amp;tid=4&amp;jq=%E8%B0%8D%E6%88%98">谍战</a> -->
-                    
+                {{range .List}}
 
-                    {{range $index, $elem := .Categorys}}
-                    <a
-                     {{if eq $.Category $elem.category}}
-                     class="active"
-                     {{end}}
-                     href="/damao/damao?page=1&limit=30&category={{$elem.category}}&searchword={{ $.SearchWord }}">{{$elem.name}}</a>
-                    {{end}}
-
-                    </li>
-                    
-                </ul>
-                <ul style="display: none;">
-                    <li class="casl-l">按地区：</li>
-                    <li class="casl-r">
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E5%A4%A7%E9%99%86">大陆</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E9%A6%99%E6%B8%AF">香港</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E5%8F%B0%E6%B9%BE">台湾</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E6%97%A5%E6%9C%AC">日本</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E9%9F%A9%E5%9B%BD">韩国</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E6%AC%A7%E7%BE%8E">欧美</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E6%B3%B0%E5%9B%BD">泰国</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;area=%E5%85%B6%E4%BB%96">其他</a>
-                    </li>   
-                </ul>
-                <ul style="display: none;">
-                    <li class="casl-l">按年份：</li>
-                    <li class="casl-r">
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2018">2018</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2017">2017</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2016">2016</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2015">2015</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2014">2014</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2013">2013</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2012">2012</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2011">2011</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2010">2010</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2009">2009</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2008">2008</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=2007">2007</a>
-                    
-                    <a href="/search.php?searchtype=5&amp;tid=4&amp;year=more">更早</a>
-                    </li>
-                </ul>       
-            </div>
-
-            <div class="row-five">
-                <div class="box-title"><b>最新动漫：</b></div>
-                <div class="box-body">
-
-                    {{range .List}}
-
-                    <div class="box-item">
-                        <a class="item-link" href="{{ .url }}" target="_blank" title="{{ .name }}">
-                            <img src="{{ .image }}" alt="{{ .name }}">
-                            <button class="hdtag">更新至8集/共12集</button>
-                        </a>
-                        <div class="meta">
-                            <div class="item-name"><a class="movie-name" target="_blank" title="{{ .name }}" href="{{ .url }}">{{ .name }}</a></div>
-                            <em>添加时间：<strong><span>2019-03-08</span></strong></em>
-                        </div>
+                <div class="box-item">
+                    <a class="item-link" href="{{ .url }}" target="_blank" title="{{ .name }}">
+                        <img src="{{ .image }}" alt="{{ .name }}">
+                        <button class="hdtag">更新至8集/共12集</button>
+                    </a>
+                    <div class="meta">
+                        <div class="item-name"><a class="movie-name" target="_blank" title="{{ .name }}" href="{{ .url }}">{{ .name }}</a></div>
+                        <em>添加时间：<strong><span>2019-03-08</span></strong></em>
                     </div>
-
-                    {{end}}
-
-                     
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/huajianghuzhibuliangrendi3ji.html" target="_blank" title="画江湖之不良人第3季">*/}}
-                            {{/*<img src="/uploads/allimg/181214/852711a864b79275.jpg" alt="画江湖之不良人第3季">*/}}
-                            {{/*<button class="hdtag">更新至21集/共40集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="画江湖之不良人第3季" href="/m/huajianghuzhibuliangrendi3ji.html">画江湖之不良人第3季</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/shanheshejitu.html" target="_blank" title="山河社稷图">*/}}
-                            {{/*<img src="/uploads/allimg/181028/12794bd7926f8b50.jpg" alt="山河社稷图">*/}}
-                            {{/*<button class="hdtag">更新至19集/共20集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="山河社稷图" href="/m/shanheshejitu.html">山河社稷图</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/dunzhiyongzhechengminglu.html" target="_blank" title="盾之勇者成名录">*/}}
-                            {{/*<img src="/uploads/allimg/190103/40822439b3c549f1.jpg" alt="盾之勇者成名录">*/}}
-                            {{/*<button class="hdtag">更新至9集/共25集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="盾之勇者成名录" href="/m/dunzhiyongzhechengminglu.html">盾之勇者成名录</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/mingzhidongjinglianga.html" target="_blank" title="明治东京恋伽">*/}}
-                            {{/*<img src="/uploads/allimg/190102/0633236e26b37753.jpg" alt="明治东京恋伽">*/}}
-                            {{/*<button class="hdtag">更新至9集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="明治东京恋伽" href="/m/mingzhidongjinglianga.html">明治东京恋伽</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/xueyinglingzhu.html" target="_blank" title="雪鹰领主">*/}}
-                            {{/*<img src="/uploads/allimg/181221/f0efd68b51927e9d.jpg" alt="雪鹰领主">*/}}
-                            {{/*<button class="hdtag">更新至13集/共24集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="雪鹰领主" href="/m/xueyinglingzhu.html">雪鹰领主</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/zuqiuxiaojiang_xinzuqiuxiaojiang.html" target="_blank" title="足球小将/新足球小将">*/}}
-                            {{/*<img src="/uploads/allimg/181214/9bf32fe673732562.jpg" alt="足球小将/新足球小将">*/}}
-                            {{/*<button class="hdtag">更新至48集/共52集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="足球小将/新足球小将" href="/m/zuqiuxiaojiang_xinzuqiuxiaojiang.html">足球小将/新足球小将</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/shaoniantaitanchujidiwuji.html" target="_blank" title="少年泰坦出击第五季">*/}}
-                            {{/*<img src="/uploads/allimg/180706/2477bba76e53a2e3.jpg" alt="少年泰坦出击第五季">*/}}
-                            {{/*<button class="hdtag">更新至23集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="少年泰坦出击第五季" href="/m/shaoniantaitanchujidiwuji.html">少年泰坦出击第五季</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/xunixiaojiezaikanzhuoni.html" target="_blank" title="虚拟小姐在看着你">*/}}
-                            {{/*<img src="/uploads/allimg/190112/1cd75c64ac02b111.jpg" alt="虚拟小姐在看着你">*/}}
-                            {{/*<button class="hdtag">第07集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="虚拟小姐在看着你" href="/m/xunixiaojiezaikanzhuoni.html">虚拟小姐在看着你</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/xiongbinglian2zhutianjianglin.html" target="_blank" title="雄兵连2诸天降临">*/}}
-                            {{/*<img src="/uploads/allimg/190127/8bacce16cf88baf9.jpg" alt="雄兵连2诸天降临">*/}}
-                            {{/*<button class="hdtag">第08集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="雄兵连2诸天降临" href="/m/xiongbinglian2zhutianjianglin.html">雄兵连2诸天降临</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/huajianghuzhibuliangrendisanji.html" target="_blank" title="画江湖之不良人第三季">*/}}
-                            {{/*<img src="/uploads/allimg/181028/eb9fdc4f9373a601.jpg" alt="画江湖之不良人第三季">*/}}
-                            {{/*<button class="hdtag">第21集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="画江湖之不良人第三季" href="/m/huajianghuzhibuliangrendisanji.html">画江湖之不良人第三季</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/xinzhuanzuyiwenlutiejuchangban.html" target="_blank" title="新撰组异闻录~铁~剧场版">*/}}
-                            {{/*<img src="/uploads/allimg/181025/53afb92bf0d5608a.jpg" alt="新撰组异闻录~铁~剧场版">*/}}
-                            {{/*<button class="hdtag">第02集大结局</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="新撰组异闻录~铁~剧场版" href="/m/xinzhuanzuyiwenlutiejuchangban.html">新撰组异闻录~铁~剧场版</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/xiamuyourenzhang_jieyuankongchan.html" target="_blank" title="夏目友人帐：结缘空蝉">*/}}
-                            {{/*<img src="/uploads/allimg/190308/f74de5759662c1a6.jpg" alt="夏目友人帐：结缘空蝉">*/}}
-                            {{/*<button class="hdtag">TC日语中字</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="夏目友人帐：结缘空蝉" href="/m/xiamuyourenzhang_jieyuankongchan.html">夏目友人帐：结缘空蝉</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/ouxianghuodongdiqiji.html" target="_blank" title="偶像活动第七季">*/}}
-                            {{/*<img src="/uploads/allimg/180412/f24f9fd6f96f28c6.jpg" alt="偶像活动第七季">*/}}
-                            {{/*<button class="hdtag">第47集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="偶像活动第七季" href="/m/ouxianghuodongdiqiji.html">偶像活动第七季</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                     {{/**/}}
-                    {{/*<div class="box-item">*/}}
-                        {{/*<a class="item-link" href="/m/fuchouzhejijiediwuji.html" target="_blank" title="复仇者集结第五季">*/}}
-                            {{/*<img src="/uploads/allimg/181001/f27b61c4cff9df60.jpg" alt="复仇者集结第五季">*/}}
-                            {{/*<button class="hdtag">第22集</button>*/}}
-                        {{/*</a>*/}}
-                        {{/*<div class="meta">*/}}
-                            {{/*<div class="item-name"><a class="movie-name" target="_blank" title="复仇者集结第五季" href="/m/fuchouzhejijiediwuji.html">复仇者集结第五季</a></div>*/}}
-                            {{/*<em>添加时间：<strong><span>2019-03-08</span></strong></em>*/}}
-                        {{/*</div>*/}}
-                    {{/*</div>*/}}
-                    
                 </div>
-            </div>
-            <div class="pagenav">
-                <ul class="pagination">
-                <li class="disabled"><a href="javascript:void(0);">当前第1/444页</a></li>
 
-                <!-- 索引不为0，显示首页 -->
-                <!-- 等于eq    不等于ne   -->
-                {{if ne .Page -1}}
-                <li><a target="_self" href="/damao/damao?page=1&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">首页</a></li>
                 {{end}}
 
-
-                <li><a target="_self" href="/damao/damao?page={{.PageFront}}&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">上一页</a></li>
-
-
-
-
-
-
-
-                
-                {{range $index, $elem := .PageSize}}
-                    {{if eq $.Page $elem}}
-                        <li><span style="color:red;font-weight:bold;">{{ . }}</span></li>
-                    {{else}}
-                        <li class="mbnone">
-                            <a target="_self" class="pagelink_b" href="/damao/damao?page={{ . }}&limit=30&searchword={{ $.SearchWord }}">{{ . }}</a>
-                        </li>
-                    {{end}}
-                {{end}}
-
-                
-                
-                
-                <li><a target="_self" href="/damao/damao?page={{.PageNext}}&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">下一页</a></li>
-                
-                <li><a target="_self" href="" class="pagelink_a">尾页</a></li>
-                </ul>
             </div>
-        </section>
-        
-        
-	<!-- </div> -->
+        </div>
+        <div class="pagenav">
+            <ul class="pagination">
+            <li class="disabled"><a href="javascript:void(0);">当前第1/444页</a></li>
 
-	<!-- <div class="footer">
-	    <a href="#1" class="item">测试菜单</a>
-	    <a href="#2" class="item">只做展示</a>
-	    <a href="#3" class="item">无功能</a>
-	    <a href="#4" class="item">不用点</a>
-    </div> -->
+            <!-- 索引不为0，显示首页 -->
+            <!-- 等于eq    不等于ne   -->
+            {{if ne .Page -1}}
+            <li><a target="_self" href="/damao/damao?page=1&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">首页</a></li>
+            {{end}}
+
+
+            <li><a target="_self" href="/damao/damao?page={{.PageFront}}&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">上一页</a></li>
+
+
+
+
+
+
+
+
+            {{range $index, $elem := .PageSize}}
+                {{if eq $.Page $elem}}
+                    <li><span style="color:red;font-weight:bold;">{{ . }}</span></li>
+                {{else}}
+                    <li class="mbnone">
+                        <a target="_self" class="pagelink_b" href="/damao/damao?page={{ . }}&limit=30&searchword={{ $.SearchWord }}">{{ . }}</a>
+                    </li>
+                {{end}}
+            {{end}}
+
+
+
+
+            <li><a target="_self" href="/damao/damao?page={{.PageNext}}&limit=30&searchword={{ $.SearchWord }}" class="pagelink_a">下一页</a></li>
+
+            <li><a target="_self" href="" class="pagelink_a">尾页</a></li>
+            </ul>
+        </div>
+
+    </section>
+
+
 
     {{template "components/footer.html" .}}
 
@@ -605,298 +172,16 @@
 
 
 
+
+
+
+</body>
+
+
 <!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
 <script src="/static/js/zepto.min.js"></script>
 <script src="/static/js/dropload.min.js"></script>
 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
 <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
 
-<!-- 野狗实时云通讯SDK -->
-<script src="https://cdn.wilddog.com/sdk/js/2.5.17/wilddog-sync.js"></script>
-
-<script>
-
-    function load() {
-        // body...
-        var config = {
-          syncURL: "https://wd9985152631szojuk.wilddogio.com" //输入节点 URL
-        };
-        wilddog.initializeApp(config);
-        var ref = wilddog.sync().ref();
-
-
-        // snapshot 里面的数据会一直和云端保持同步
-        ref.on("value", function(snapshot) {
-            console.log(snapshot.val());
-
-            var url = snapshot.val().data.url;
-            url = "rtmp://live.hkstv.hk.lxdns.com/live/hks1";
-            init_video_player(url);
-
-
-        });
-        // 如果你只想监听一次，那么你可以使用 once()
-        ref.once("value").then(function(snapshot){
-            console.info(snapshot.val());
-        }).catch(function(err){
-            console.error(err);
-        })
-    }
-
-
-    function init_video_player(url) {
-        // body...
-        var videoObject = {
-            container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
-            variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
-            flashplayer: false,//如果强制使用flashplayer则设置成true
-            video: url//视频地址 'https://www.qiuchenlong.top/st1/yinyuetai_001.mp4'
-        };
-        var player=new ckplayer(videoObject);
-    }
-
-
-    // 获取url参数部分
-    function GetUrlPara()
-    {
-　　　　 var url = document.location.toString();
-　　　　 var arrUrl = url.split("?");
-
-　　　　 var para = arrUrl[1];
-alert(para)
-　　　　 return para;
-    }
-
-
-
-// function load(){
-//     $.ajax({
-//                 type: 'GET',
-//                 async: true,
-//                 url: "http://spider.dcloud.net.cn/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at",//location.href + '/search?page=1&size=10',
-//                 dataType: 'json',
-//                 success: function(data){
-//                     var result = '';
-//                     for(var i = 0; i < data.length; i++){
-//                         // result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
-//                         //                 +'<img src="'+data.Lists[i].Pic+'" alt="" >'
-//                         //                 +'<div style="width: 100%;">'
-//                         //                     +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
-//                         //                     +'<span class="date">'+data.Lists[i].Date+'</span>'
-//                         //                 +'</div>'
-//                         //                 +'<button type="button" class="btn btn-primary">我要报名</button>'
-//                         //             +'</a>';
-
-//                         result += getTextHtml(data, i);
-//                     }
-//                     $('.lists').html(result);
-
-//                     // setDropload();
-//                 },
-//                 error: function(xhr, type){
-
-//                 }
-//             });
-// }
-
-
-// // http://spider.dcloud.net.cn/api/news?published_at=2018-12-09 12:24:38
-
-// // http://127.0.0.1:8080/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at&minId=77178&time=1544330724143&pageSize=10
-// // http://127.0.0.1:8080/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at&minId=77188&time=1544330666310&pageSize=10
-// // http://127.0.0.1:8080/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at
-
-
-// $(function(){
-//     // 页数
-//     var page = 0;
-//     // 每页展示10个
-//     var size = 10;
-//     // dropload
-//     $('.content').dropload({
-//         scrollArea : window,
-//         domUp : {
-//             domClass   : 'dropload-up',
-//             domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
-//             domUpdate  : '<div class="dropload-update">↑释放更新</div>',
-//             domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
-//         },
-//         domDown : {
-//             domClass   : 'dropload-down',
-//             domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
-//             domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
-//             domNoData  : '<div class="dropload-noData">暂无数据</div>'
-//         },
-//         loadUpFn : function(me){
-//             // alert("下拉刷新...");
-//             $.ajax({
-//                 type: 'GET',
-//                 async: true,
-//                 url: "http://spider.dcloud.net.cn/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at",//location.href + '/search?page=0&size=10',
-//                 dataType: 'json',
-//                 success: function(data){
-//                     var result = '';
-//                     for(var i = 0; i < data.length; i++){
-//                         // result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
-//                         //                 +'<img src="'+data.Lists[i].Pic+'" alt="" >'
-//                         //                 +'<div style="width: 100%;">'
-//                         //                     +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
-//                         //                     +'<span class="date">'+data.Lists[i].Date+'</span>'
-//                         //                 +'</div>'
-//                         //                 +'<button type="button" class="btn btn-primary">我要报名</button>'
-//                         //             +'</a>';
-
-//                         result += getTextHtml(data, i);
-//                     }
-
-
-//                     // 为了测试，延迟1秒加载
-//                     setTimeout(function(){
-//                         $('.lists').html(result);
-//                         // 每次数据加载完，必须重置
-//                         me.resetload();
-//                         // 重置页数，重新获取loadDownFn的数据
-//                         page = 0;
-//                         // 解锁loadDownFn里锁定的情况
-//                         me.unlock();
-//                         me.noData(false);
-
-
-//                         $(".dropload-down").find(".dropload-refresh").text("暂无数据")
-
-
-//                     },1);
-//                 },
-//                 error: function(xhr, type){
-//                     // alert('top, Ajax error!');
-//                     // 即使加载出错，也得重置
-//                     // me.resetload();
-//                 }
-//             });
-//         },
-//         loadDownFn : function(me){
-//             // alert("加载更多...");
-
-//             // console.log($(".lists>a:last-child>div>span").html())
-//             // console.log($(".lists>a:last-child").attr("id"))
-//             // console.log($(".lists>a:first-child").attr("id"))
-
-            
-
-//             var minId = $(".lists>a:last-child").attr("id");
-//             var time = new Date().getTime() + "";
-//             var params = "&minId=" + minId + "&time=" + time + "&pageSize=10";
-
-//             if (minId == undefined) {
-//                 params = "";
-//             }
-
-
-//             page++;
-//             // 拼接HTML
-//             var result = '';
-//             $.ajax({
-//                 type: 'GET',
-//                 async: true,
-//                 // 127.0.0.1
-//                 url: "http://spider.dcloud.net.cn/api/news?column=id%2Cpost_id%2Ctitle%2Cauthor_name%2Ccover%2Cpublished_at" + params,//location.href + '/search?page='+page+'&size='+size,
-//                 dataType: 'json',
-//                 success: function(data){
-//                     var arrLen = data.length;
-//                     if(arrLen > 0){
-//                         for(var i=0; i<arrLen; i++){
-//                             // result +=   '<a class="item opacity" href="'+data.Lists[i].Link+'">'
-//                             //                 +'<img src="'+data.Lists[i].Pic+'" alt="" >'
-//                             //                 +'<div style="width: 100%;">'
-//                             //                     +'<h3 class="title">'+data.Lists[i].Title+'</h3>'
-//                             //                     +'<span class="date">'+data.Lists[i].Date+'</span>'
-//                             //                 +'</div>'
-//                             //                 +'<button type="button" class="btn btn-primary">我要报名</button>'
-//                             //             +'</a>';
-
-//                             result += getTextHtml(data, i);
-//                         }
-//                     // 如果没有数据
-//                     }else{
-//                         // 锁定
-//                         me.lock();
-//                         // 无数据
-//                         me.noData();
-//                     }
-//                     // 为了测试，延迟1秒加载
-//                     setTimeout(function(){
-//                         // 插入数据到页面，放到最后面
-//                         $('.lists').append(result);
-//                         // 每次数据插入，必须重置
-//                         me.resetload();
-//                     },1);
-//                 },
-//                 error: function(xhr, type){
-//                     // alert('bottom, Ajax error!');
-//                     // 即使加载出错，也得重置
-//                     // me.resetload();
-//                 }
-//             });
-//         },
-//         threshold : 50
-//     });
-// });
-
-
-
-// function getTextHtml(data, i) {
-//     return '<a id="' + data[i].id + '" class="item opacity" href="/detail?id='+data[i].post_id+'&published_at=' + dateUtils.format(data[i].published_at) + '">'
-//                 +'<img src="'+data[i].cover+'" alt="" >'
-//                 +'<div style="width: 100%;">'
-//                     +'<h3 class="title">'+data[i].title+'</h3>'
-//                     +'<span class="date">'+dateUtils.format(data[i].published_at)+'</span>'
-//                 +'</div>'
-//                 +'<button type="button" class="btn btn-primary">我要报名</button>'
-//             +'</a>';
-// }
-
-
-
-// /**
-//  * 格式化时间的辅助类，将一个时间转换成x小时前、y天前等
-//  */
-// var dateUtils = {
-//     UNITS: {
-//         '年': 31557600000,
-//         '月': 2629800000,
-//         '天': 86400000,
-//         '小时': 3600000,
-//         '分钟': 60000,
-//         '秒': 1000
-//     },
-//     humanize: function(milliseconds) {
-//         var humanize = '';
-//         $.each(this.UNITS, function(unit, value) {
-//             if(milliseconds >= value) {
-//                 humanize = Math.floor(milliseconds / value) + unit + '前';
-//                 return false;
-//             }
-//             return true;
-//         });
-//         return humanize || '刚刚';
-//     },
-//     format: function(dateStr) {
-//         var date = this.parse(dateStr)
-//         var diff = Date.now() - date.getTime();
-//         if(diff < this.UNITS['天']) {
-//             return this.humanize(diff);
-//         }
-//         var _format = function(number) {
-//             return(number < 10 ? ('0' + number) : number);
-//         };
-//         return date.getFullYear() + '/' + _format(date.getMonth() + 1) + '/' + _format(date.getDay()) + '-' + _format(date.getHours()) + ':' + _format(date.getMinutes());
-//     },
-//     parse: function(str) { //将"yyyy-mm-dd HH:MM:ss"格式的字符串，转化为一个Date对象
-//         var a = str.split(/[^0-9]/);
-//         return new Date(a[0], a[1] - 1, a[2], a[3], a[4], a[5]);
-//     }
-// };
-</script>
-
-</body>
 </html>

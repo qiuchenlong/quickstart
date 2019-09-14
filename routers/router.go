@@ -7,8 +7,11 @@ import (
 
 func init() {
     //beego.Router("/", &controllers.DamaoController{})
+    //beego.Router("/", &controllers.BatchController{})
     beego.Router("/", &controllers.MainController{})
     beego.AutoRouter(&controllers.DamaoController{})
+    //beego.Router("/damao/live", &controllers.DamaoLiveController{})
+    //beego.AutoRouter(&controllers.DamaoLiveController{})
     //beego.Router("/detail", &controllers.DamaoDetailController{})
     beego.AutoRouter(&controllers.DamaoDetailController{})
 

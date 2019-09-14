@@ -289,16 +289,55 @@
         </script> -->
 
 
-<video id=example-video style="width:100%; height:540px;" class="video-js vjs-default-skin" controls>
-  <source
-     src="{{ .Playurl }}"
-     type="application/x-mpegURL">
-</video>
 
-<script>
-var player = videojs('example-video');
-player.play();
+<!-- cdnjs : use a specific version of Video.js (change the version numbers as necessary) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.3/video-js.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.3/video.min.js"></script>
+
+<div class="video-container" style="width:100%; height:540px;">
+    <video id="my-player" class="video-js" style="width:100%; height:100%;" controls preload="auto" poster="" data-setup='{}'>
+        <source src="{{ .Playurl }}
+" type="video/mp4">
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">
+            supports HTML5 video
+            </a>
+        </p>
+    </video>
+</div>
+
+<script type="text/javascript">
+    var option = {};
+    var player = videojs('my-player', options, function onPlayerReady() {
+        videojs.log('Your player is ready!');
+
+        // In this context, `this` is the player that was created by Video.js.
+        this.play();
+
+        // How about an event listener?
+        this.on('ended', function() {
+            videojs.log('Awww...over so soon?!');
+        });
+    });
 </script>
+
+
+
+{{/*<video id=example-video style="width:100%; height:540px;" class="video-js vjs-default-skin" controls>*/}}
+  {{/*<source*/}}
+     {{/*src="{{ .Playurl }}"*/}}
+     {{/*type="video/mp4">*/}}
+
+     {{/*<--! type="application/x-mpegURL" -->*/}}
+
+{{/*</video>*/}}
+
+{{/*<script>*/}}
+{{/*var player = videojs('example-video');*/}}
+{{/*player.play();*/}}
+{{/*</script>*/}}
 
 
 

@@ -35,6 +35,7 @@ func Init() {
 	orm.RegisterModel(new(Damao))
 	orm.RegisterModel(new(DamaoCategory))
 	orm.RegisterModel(new(DamaoType))
+	orm.RegisterModel(new(Batch))
     //调用 RunCommand 执行 orm 命令。
     orm.RunCommand()
 

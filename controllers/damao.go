@@ -72,7 +72,8 @@ func (self *DamaoController) Damao() {
 		if strings.Contains(v.Url, "rtmp") ||
 			strings.Contains(v.Url, ".mp4") ||
 			strings.Contains(v.Url, ".m3u8") {
-			row["url"] = "https://www.qiuchenlong.top/damaodetail/detail?playurl=" + v.Url + "&name=" + v.Name
+		//https://www.qiuchenlong.top/
+			row["url"] = "/damaodetail/detail?playurl=" + v.Url + "&name=" + v.Name
 		}
 		list[k] = row
 	}
@@ -159,6 +160,33 @@ func arrayReverse(list []map[string]interface{}) {
 	for i, j := 0, len(list)-1; i < j; i, j = i + 1, j -1 {
 		list[i], list[j] = list[j], list[i]
 	}
+}
+
+
+
+
+
+
+
+
+
+
+
+// 直播
+func (self *DamaoController) Live() {
+
+	//name := self.GetString("name");
+	//playurl := self.GetString("playurl")
+	//
+	//fmt.Println(playurl)
+	//
+	//self.Data["Website"] = "爱播"
+	//self.Data["Playurl"] = playurl
+	//self.Data["Name"] = name
+	//self.TplName = "damao/damao_live.tpl"
+	//self.TplName = "damao_detail.tpl"
+
+	self.displayTpl()
 }
 
 
