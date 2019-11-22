@@ -1,0 +1,30 @@
+.video-js .vjs-big-play-button {
+    width: 103px;
+    height: 79px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    background-color: hsla(0,0%,100%,.25);
+    border: none;
+    line-height: 79px;
+    top: 50%;
+    left: 50%;
+    border-radius: 30px;
+    margin: -51.5px auto 0 -39.5px;
+}
+
+/* Change all text and icon colors in the player. */
+.vjs-matrix.video-js {
+  /*color: #00ff00;*/
+}
+
+/* Change the border of the big play button. */
+.vjs-matrix .vjs-big-play-button {
+  /*border-color: #00ff00;*/
+}
+
+/* Change the color of various "bars". */
+.vjs-matrix .vjs-volume-level,
+.vjs-matrix .vjs-play-progress,
+.vjs-matrix .vjs-slider-bar {
+  /*background: #00ff00;*/
+}

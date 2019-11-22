@@ -1,85 +1,57 @@
-<head>
-	<title>{{.Website}}</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<header>
+        <div class="head">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <div class="logo">
+                <a href="/damao/damao">爱播</a>
+            </div>
 
-    <!-- 引入 Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+            <div class="search-box">
+                <form name="formsearch" id="formsearch" action="/search.php" method="post" target="_blank" autocomplete="off">
+                    <input type="text" id="keyword" name="searchword" class="search-input" value="搜索视频" onfocus="if(this.value=='搜索视频'){this.value='';}" onblur="if(this.value==''){this.value='搜索视频';};">
+                    <input type="submit" id="searchbutton" class="search-button" value="搜索">
+                </form>
+            </div>
 
-    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
-    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
-    <!--[if lt IE 9]>
-     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+        </div>
 
-    <style>
-    *{
-        margin: 0;
-        padding:0;
-        -webkit-tap-highlight-color:rgba(0,0,0,0);
-        -webkit-text-size-adjust:none;
-    }
-    html{
-        font-size: 10px;
-    }
-    body{
-        background-color: #f5f5f5;
-        font-size: 1.2em;
-    }
-    .header{
-        height: 44px;
-        line-height: 44px;
-        border-bottom: 1px solid #ccc;
-        background-color: #eee;
-    }
-    .header h1{
-        text-align: center;
-        font-size: 2rem;
-        font-weight: normal;
-        color: #333;
-        margin-top: 0px;
-        padding-top: 12px;
-    }
-    
-    .footer{
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        width: 100%;
-        height: 40px;
-        display: none;
-    }
-    .footer a{
-        position: relative;
-        display: block;
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        line-height: 40px;
-        text-align: center;
-        color: #666;
-        background-color: #eee;
-        text-decoration: none;
-    }
-    .footer a:before{
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 10px;
-        width: 1px;
-        height: 20px;
-        background-color: #ccc;
-    }
-    .footer a:first-child:before{
-        display: none;
-    }
-    </style>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid"  style="width: 100%; max-width: 1000px;">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar_menu">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/damao/damao">爱播</a>
+                </div>
 
-</head>
+                <div class="collapse navbar-collapse" id="navbar_menu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/damao/damao">首页</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/damao/damao">电影</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/damao/damao">电视剧</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/damao/live">直播</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/damao/fuli">福利</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left navbar-right" role="search" target="_blank" action="/damao/damao" method="get">
+                        <div class="form-group">
+                            <input name="searchword" type="text" class="form-control" placeholder="搜索视频">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                </div>
+
+
+            </div>
+        </nav>
+    </header>

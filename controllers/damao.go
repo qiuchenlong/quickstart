@@ -189,6 +189,23 @@ func (self *DamaoController) Live() {
 	self.displayTpl()
 }
 
+// 福利
+func (self *DamaoController) Fuli() {
+
+	//name := self.GetString("name");
+	//playurl := self.GetString("playurl")
+	//
+	//fmt.Println(playurl)
+	//
+	//self.Data["Website"] = "爱播"
+	//self.Data["Playurl"] = playurl
+	//self.Data["Name"] = name
+	//self.TplName = "damao/damao_live.tpl"
+	//self.TplName = "damao_detail.tpl"
+
+	self.displayTpl()
+}
+
 
 
 
