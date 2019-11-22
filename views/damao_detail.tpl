@@ -296,8 +296,7 @@
 
 <div class="video-container" style="width:100%; height:540px;">
     <video id="my-player" class="video-js" style="width:100%; height:100%;" controls preload="auto" poster="" data-setup='{}'>
-        <source src="{{ .Playurl }}
-" type="video/mp4">
+        <source src="{{ .Playurl }}" type="video/mp4">
         <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a
             web browser that

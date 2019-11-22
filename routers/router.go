@@ -38,6 +38,7 @@ func init() {
 
     // 抖音 autorouter   {{host}}/douyin/list
     beego.AutoRouter(&controllers.DouyinController{})
+    beego.Router("/douyin.com", &controllers.DouyinController{}, "*:List")
 
     // 管理员
     beego.AutoRouter(&controllers.AdminController{})
