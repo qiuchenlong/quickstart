@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="cn">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>webgl</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <style type="text/css">
-    	body {
-    		text-align: center;
-    	}
-    	.menu-options {
-    		margin: 0 auto;
-    		margin-top: 100px;
-    	}
+        body {
+            text-align: center;
+        }
+        .menu-options {
+            margin: 0 auto;
+            margin-top: 100px;
+        }
     </style>
-	
+
 <body onload="threeStart();">
-	<div class="btn-group menu-options">
-		<button type="button" class="btn btn-default" onclick="normal();">Normal</button>
-		<button type="button" class="btn btn-primary" onclick="effectGray();">Effect Gray</button>
-		<button type="button" class="btn btn-success" onclick="effectMask();">Effect Mask</button>
-		<button type="button" class="btn btn-info" onclick="effectLookup();">Effect Lookup</button>
-	</div>
-	<!-- three.js渲染标签 -->
-	<div id="canvas-frame"></div>
+    <div class="btn-group menu-options">
+        <button type="button" class="btn btn-default" onclick="normal();">Normal</button>
+        <button type="button" class="btn btn-primary" onclick="effectGray();">Effect Gray</button>
+        <button type="button" class="btn btn-success" onclick="effectMask();">Effect Mask</button>
+        <button type="button" class="btn btn-info" onclick="effectLookup();">Effect Lookup</button>
+    </div>
+    <!-- three.js渲染标签 -->
+    <div id="canvas-frame"></div>
     <!-- 原生标签 -->
-    <video id="video" width="100%" height="600px"></video> 
+    <video id="video" width="100%" height="600px"></video>
 </body>
 
 
@@ -95,7 +95,7 @@
 
 
         navigator.getMedia = navigator.getUserMedia ||
-                             navagator.webkitGetUserMedia ||
+                             navigator.webkitGetUserMedia ||
                              navigator.mozGetUserMedia ||
                              navigator.msGetUserMedia ||
                              (navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
@@ -103,7 +103,7 @@
             video: true,  // 摄像头
             audio: false  // 音频
         }, function(strem){
-            video.src = vendorUrl.createObjectURL(strem); // 绑定到video标签，输出  
+            video.src = vendorUrl.createObjectURL(strem); // 绑定到video标签，输出
             video.play(); // 向PeerConnection中加入需要发送的流
 
         }, function(error) {
@@ -117,7 +117,7 @@
         texture.format = THREE.RGBFormat;
 
 
-		normal();
+        normal();
 
 
 
@@ -147,39 +147,40 @@
 
 
     function normal() {
-    	material = new THREE.ShaderMaterial( {
-					// map: texture,
-					// side: THREE.DoubleSide,
-		            uniforms: {
-		                inputImageTexture: { value: texture },
-		            },
-		            vertexShader: document.getElementById( 'vertexshader' ).textContent,
-		            fragmentShader: unescapeHTML(document.getElementById( 'fragmentshader' ).textContent),
-		            transparent: true
-		        } );
-    	mesh = new THREE.Mesh(geometry,  material);
+        material = new THREE.ShaderMaterial( {
+                    // map: texture,
+                    // side: THREE.DoubleSide,
+                    uniforms: {
+                        inputImageTexture: { value: texture },
+                    },
+                    vertexShader: document.getElementById( 'vertexshader' ).textContent,
+                    fragmentShader: unescapeHTML(document.getElementById( 'fragmentshader' ).textContent),
+                    transparent: true
+                } );
+        mesh = new THREE.Mesh(geometry,  material);
         scene.add(mesh);
     }
 
 
     function effectGray() {
 
-    	material = new THREE.ShaderMaterial( {
-		            uniforms: {
-		                h: { value: 3/window.innerWidth },
-						v: { value: 3/window.innerHeight },
-		                inputImageTexture: { value: texture },
-		            },
-		            vertexShader: document.getElementById( 'vertexshader' ).textContent,
-		            fragmentShader: unescapeHTML(document.getElementById( 'fragmentshader-gray' ).textContent),
-		            transparent: true
-		        } );
+        material = new THREE.ShaderMaterial( {
+                    uniforms: {
+                        h: { value: 3/window.innerWidth },
+                        v: { value: 3/window.innerHeight },
+                        inputImageTexture: { value: texture },
+                    },
+                    vertexShader: document.getElementById( 'vertexshader' ).textContent,
+                    fragmentShader: unescapeHTML(document.getElementById( 'fragmentshader-gray' ).textContent),
+                    transparent: true
+                } );
 
-    	mesh = new THREE.Mesh(geometry,  material);
+        mesh = new THREE.Mesh(geometry,  material);
         scene.add(mesh);
     }
 
     function effectMask() {
+<<<<<<< HEAD
     	texture2 = new THREE.TextureLoader().load( "static/image/hudsonBackground.png" );
 		texture2.minFilter = THREE.LinearFilter;
 
@@ -204,22 +205,44 @@
 		        } );
 
     	mesh = new THREE.Mesh(geometry,  material);
+=======
+        texture2 = new THREE.TextureLoader().load( "static/image/hudsonBackground.png" );
+        texture2.minFilter = THREE.LinearFilter;
+
+        texture3 = new THREE.TextureLoader().load( "static/image/overlayMap.png" );
+        texture3.minFilter = THREE.LinearFilter;
+
+        material = new THREE.ShaderMaterial( {
+                    uniforms: {
+                        h: { value: 3/window.innerWidth },
+                        v: { value: 3/window.innerHeight },
+                        inputImageTexture: { value: texture },
+                        inputImageTexture2: { value : texture2 },
+                        inputImageTexture3: { value : texture3 },
+                    },
+                    vertexShader: document.getElementById( 'vertexshader' ).textContent,
+                    fragmentShader: unescapeHTML(document.getElementById( 'fragmentshader-mask' ).textContent),
+                    transparent: true
+                } );
+
+        mesh = new THREE.Mesh(geometry,  material);
+>>>>>>> origin/master
         scene.add(mesh);
     }
 
     function effectLookup() {
-    	texture2 = new THREE.TextureLoader().load( "static/image/fairy_tale.png" );
-		texture2.minFilter = THREE.LinearFilter;
+        texture2 = new THREE.TextureLoader().load( "static/image/fairy_tale.png" );
+        texture2.minFilter = THREE.LinearFilter;
 
-    	material = new THREE.ShaderMaterial( {
-		            uniforms: {
-		                inputImageTexture: { value: texture },
-		                inputImageTexture2: { value : texture2 },
-		            },
-		            vertexShader: document.getElementById( 'vertexshader' ).textContent,
-		            fragmentShader: unescapeHTML(document.getElementById( 'fragmentshader-lookup' ).textContent),
-		            transparent: true
-		        } );
+        material = new THREE.ShaderMaterial( {
+                    uniforms: {
+                        inputImageTexture: { value: texture },
+                        inputImageTexture2: { value : texture2 },
+                    },
+                    vertexShader: document.getElementById( 'vertexshader' ).textContent,
+                    fragmentShader: unescapeHTML(document.getElementById( 'fragmentshader-lookup' ).textContent),
+                    transparent: true
+                } );
 
 
 
@@ -232,11 +255,11 @@
 
 
 <script type="x-shader/x-vertex" id="vertexshader">
-	varying vec2 textureCoordinate;
+    varying vec2 textureCoordinate;
 
     void main() {
-    	textureCoordinate = uv;
-    	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        textureCoordinate = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
     }
 </script>
 
@@ -245,13 +268,13 @@
 
     varying highp vec2 textureCoordinate;
 
-	uniform sampler2D inputImageTexture;
+    uniform sampler2D inputImageTexture;
 
-	void main()
-	{
-		gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
-	}
-	
+    void main()
+    {
+        gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
+    }
+
 </script>
 
 
@@ -260,28 +283,29 @@
 
     varying highp vec2 textureCoordinate;
 
-	uniform sampler2D inputImageTexture;
+    uniform sampler2D inputImageTexture;
 
-	const highp vec3 W = vec3(0.299, 0.587, 0.114);
+    const highp vec3 W = vec3(0.299, 0.587, 0.114);
 
-	void main()
-	{
-		lowp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);
-		vec2 pos = textureCoordinate;
-		vec3 color = textureColor.rgb;
-		float luminace = dot(color, W);
+    void main()
+    {
+        lowp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);
+        vec2 pos = textureCoordinate;
+        vec3 color = textureColor.rgb;
+        float luminace = dot(color, W);
 
-		gl_FragColor = vec4(luminace, luminace, luminace, 1.0);
-	}
-	
+        gl_FragColor = vec4(luminace, luminace, luminace, 1.0);
+    }
+
 </script>
 
 
 <script type="x-shader/x-fragment" id="fragmentshader-mask">
-	precision lowp float;
+    precision lowp float;
 
-	varying highp vec2 textureCoordinate;
+    varying highp vec2 textureCoordinate;
 
+<<<<<<< HEAD
 	uniform sampler2D inputImageTexture;
 	uniform sampler2D inputImageTexture2; //blowout;
     uniform sampler2D inputImageTexture3; //overlay;
@@ -296,69 +320,83 @@
 
 		gl_FragColor = vec4(vInfo4, 0.75);
 	}
+=======
+    uniform sampler2D inputImageTexture;
+    uniform sampler2D inputImageTexture2; //blowout;
+    uniform sampler2D inputImageTexture3; //overlay;
+
+    void main()
+    {
+        vec3 vInfo = vec3(texture2D(inputImageTexture, textureCoordinate));
+        vec3 vInfo2 = vInfo.rgb * vec3(texture2D(inputImageTexture2, textureCoordinate));
+        vec3 vInfo3 = vInfo2.rgb * vec3(texture2D(inputImageTexture3, textureCoordinate));
+
+        gl_FragColor = vec4(vInfo3, 1);
+    }
+>>>>>>> origin/master
 </script>
 
 
 <script type="x-shader/x-fragment" id="fragmentshader-lookup">
-   
-	varying highp vec2 textureCoordinate;
 
-	uniform sampler2D inputImageTexture;
-	uniform sampler2D inputImageTexture2; // lookup texture
+    varying highp vec2 textureCoordinate;
 
-	uniform lowp float intensity;
+    uniform sampler2D inputImageTexture;
+    uniform sampler2D inputImageTexture2; // lookup texture
 
-	void main()
-	{
-		highp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);
+    uniform lowp float intensity;
 
-		highp float blueColor = textureColor.b * 63.0;
+    void main()
+    {
+        highp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);
 
-		highp vec2 quad1;
-		quad1.y = floor(floor(blueColor) / 8.0);
-		quad1.x = floor(blueColor) - (quad1.y * 8.0);
+        highp float blueColor = textureColor.b * 63.0;
 
-		highp vec2 quad2;
-		quad2.y = floor(ceil(blueColor) / 8.0);
-		quad2.x = ceil(blueColor) - (quad2.y * 8.0);
+        highp vec2 quad1;
+        quad1.y = floor(floor(blueColor) / 8.0);
+        quad1.x = floor(blueColor) - (quad1.y * 8.0);
 
-		highp vec2 texPos1;
-		texPos1.x = (quad1.x * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);
-		texPos1.y = (quad1.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);
+        highp vec2 quad2;
+        quad2.y = floor(ceil(blueColor) / 8.0);
+        quad2.x = ceil(blueColor) - (quad2.y * 8.0);
 
-		highp vec2 texPos2;
-		texPos2.x = (quad2.x * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);
-		texPos2.y = (quad2.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);
+        highp vec2 texPos1;
+        texPos1.x = (quad1.x * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);
+        texPos1.y = (quad1.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);
 
-		lowp vec4 newColor1 = texture2D(inputImageTexture2, texPos1);
-		lowp vec4 newColor2 = texture2D(inputImageTexture2, texPos2);
+        highp vec2 texPos2;
+        texPos2.x = (quad2.x * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);
+        texPos2.y = (quad2.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);
 
-		lowp vec4 newColor = mix(newColor1, newColor2, fract(blueColor));
+        lowp vec4 newColor1 = texture2D(inputImageTexture2, texPos1);
+        lowp vec4 newColor2 = texture2D(inputImageTexture2, texPos2);
 
-		gl_FragColor = mix(textureColor, vec4(newColor.rgb, textureColor.w), 0.225);
-	}
+        lowp vec4 newColor = mix(newColor1, newColor2, fract(blueColor));
+
+        gl_FragColor = mix(textureColor, vec4(newColor.rgb, textureColor.w), 0.225);
+    }
 
 </script>
 
 
 
-	<!-- 
-		反色
-		gl_FragColor = vec4((1.0 - textureColor.rgb), textureColor.w); 
-	-->
-
-	
-	
+    <!--
+        反色
+        gl_FragColor = vec4((1.0 - textureColor.rgb), textureColor.w);
+    -->
 
 
 
 
-	<script type="text/javascript">
-		function unescapeHTML(a){
- 			a = "" + a;
- 			return a.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'");
- 		}
-	</script>
+
+
+
+    <script type="text/javascript">
+        function unescapeHTML(a){
+            a = "" + a;
+            return a.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+        }
+    </script>
 
 
 </html>

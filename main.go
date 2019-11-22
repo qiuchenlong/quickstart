@@ -18,6 +18,6 @@ func main() {
 	// 静态资源目录
 	beego.SetStaticPath("/down", "download")
 
-	beego.Run(":8080")
+	beego.Run()
 }
 
