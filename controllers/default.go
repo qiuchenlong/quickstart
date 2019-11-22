@@ -19,7 +19,8 @@ func (c *MainController) Get() {
 	// c.Data["Email"] = "astaxie@gmail.com"
 	// c.TplName = "index.tpl"
 	// c.Ctx.WriteString("hello world.")
-	c.TplName = "list.html"
+	// c.TplName = "list.html"
+	c.TplName = "webgl.html"
 }
 
 

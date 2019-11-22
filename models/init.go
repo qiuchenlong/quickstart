@@ -32,7 +32,7 @@ func Init() {
     // 注册model模型
     orm.RegisterModel(new(User))
     //调用 RunCommand 执行 orm 命令。
-    // orm.RunCommand()
+    orm.RunCommand()
 
     if beego.AppConfig.String("runmode") == "dev" {
     	// 开启 ORM 调试模式
