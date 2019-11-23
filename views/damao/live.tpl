@@ -4,7 +4,7 @@
     {{template "head.tpl" .}}
 
     <!-- css -->
-    <link href="//vjs.zencdn.net/7.3.0/video-js.min.css" rel="stylesheet">
+    <link href="/static/videojs/7.3.0/css/video-js.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="/static/css/videojs-matrix.css">
 
@@ -31,7 +31,7 @@
 
 
     <!-- js -->
-    <script src="//vjs.zencdn.net/7.3.0/video.min.js"></script>
+    <script src="/static/7.3.0/js/video.min.js"></script>
     <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
 
 
@@ -48,12 +48,12 @@
                 <!-- video player -->
                 <div class="video-container">
                     <video id="video-player" class="video-js" controls preload="auto" poster="/static/image/dongfangweishi.jpg" data-setup="{}">
-                        <!-- <source src="https://mvvideoshare2.meitudata.com/5d46a41fcbb7112xqwm48x3375_H264_MP5d46aa.mp4?k=6850aeb47c5c1f1d383d05bdbc96dd5d&t=5ddb728f" type="video/mp4"> -->
+                        <source src="https://mvvideoshare2.meitudata.com/5d46a41fcbb7112xqwm48x3375_H264_MP5d46aa.mp4?k=6850aeb47c5c1f1d383d05bdbc96dd5d&t=5ddb728f" type="video/mp4">
 
 
                         <!-- live m3u8 -->
                         <!-- <source src="http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8" type="application/x-mpegURL"> -->
-                        <source src="http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/dongfang_2/index.m3u8" type="application/x-mpegURL">
+                        <!-- <source src="http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/dongfang_2/index.m3u8" type="application/x-mpegURL"> -->
                             
                     </video>
                 </div>

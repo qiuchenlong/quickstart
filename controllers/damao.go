@@ -207,6 +207,10 @@ func (self *DamaoController) Fuli() {
 }
 
 
+// 上传
+func (self *DamaoController) Upload() {
+	self.displayTpl()
+}
 
 
 //分页处理函数

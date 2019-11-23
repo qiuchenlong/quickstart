@@ -15,6 +15,8 @@ func init() {
     //beego.Router("/detail", &controllers.DamaoDetailController{})
     beego.AutoRouter(&controllers.DamaoDetailController{})
 
+    // upload
+    beego.AutoRouter(&controllers.UploadController{})
 
     //// 首页
     //beego.Router("/", &controllers.MainController{})
