@@ -43,6 +43,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/damao/fuli">福利</a></li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/damao/vlog">短视频</a></li>
+                    </ul>
                     <form class="navbar-form navbar-left navbar-right" role="search" target="_blank" action="/damao/damao" method="get">
                         <div class="form-group">
                             <input name="searchword" type="text" class="form-control" placeholder="搜索视频">

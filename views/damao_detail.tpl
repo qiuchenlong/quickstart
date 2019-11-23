@@ -50,7 +50,7 @@
         
         <!-- video player -->
         <div class="video-container">
-            <video id="video-player" class="video-js" controls preload="auto" poster="/static/image/dongfangweishi.jpg" data-setup="{}">
+            <video id="video-player" class="video-js" controls preload="auto" poster="" data-setup="{}">
                 <!-- <source src="https://mvvideoshare2.meitudata.com/5d46a41fcbb7112xqwm48x3375_H264_MP5d46aa.mp4?k=6850aeb47c5c1f1d383d05bdbc96dd5d&t=5ddb728f" type="video/mp4"> -->
 
 
@@ -59,7 +59,7 @@
                 <!-- <source src="http://cctvtxyh5ca.liveplay.myqcloud.com/wstv/dongfang_2/index.m3u8" type="application/x-mpegURL"> -->
 
 
-                <source src="{{.playerurl}}" type="application/x-mpegURL">
+                <source src="{{ .Playurl }}" type="video/mp4">
 
 
 

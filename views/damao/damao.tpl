@@ -23,7 +23,7 @@
                     </a>
                     <div class="meta">
                         <div class="item-name"><a class="movie-name" target="_blank" title="{{ .name }}" href="{{ .url }}">{{ .name }}</a></div>
-                        <em>添加时间：<strong><span>2019-03-08</span></strong></em>
+                        <em>添加时间：<strong><span>{{ .create_time }}</span></strong></em>
                     </div>
                 </div>
 

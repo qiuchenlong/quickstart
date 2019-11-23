@@ -66,6 +66,8 @@ func (self *DamaoController) Damao() {
 		row["name"] = v.Name
 		row["description"] = v.Description
 		row["image"] = v.Image
+		row["create_time"] = v.CreateTime
+		row["update_time"] = v.UpdateTime
 
 		row["url"] = v.Url
 
@@ -207,10 +209,12 @@ func (self *DamaoController) Fuli() {
 }
 
 
-// 上传
-func (self *DamaoController) Upload() {
+// Vlog
+func (self *DamaoController) Vlog() {
 	self.displayTpl()
 }
+
+
 
 
 //分页处理函数

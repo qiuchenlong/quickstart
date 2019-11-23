@@ -7,6 +7,10 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+    // "strconv"
+    "strings"
+
+    "quickstart/models"
 )
 
 type UploadController struct {
@@ -55,5 +59,42 @@ func (this *UploadController) Upfile(){
     if err != nil {
         this.Ctx.WriteString( fmt.Sprintf("%v",err) )
     }
+
+
+    // timeTemplate := "2006-01-02 15:04:05" //常规类型
+    // stamp, _ := time.ParseInLocation(timeTemplate, time.Now().Format(timeTemplate), time.Local)
+    timestamp := time.Now().Unix()
+
+
+
+    // insert database
+    Entry := new(models.Damao)
+    // 索引
+    // Entry.Id          int
+    // 名称
+    Entry.Name        = strings.TrimSpace(this.GetString("name"))
+    // 描述
+    Entry.Description = strings.TrimSpace(this.GetString("description"))
+    // 图片
+    Entry.Image       = strings.TrimSpace(this.GetString("image"))
+    // URL
+    Entry.Url         = "http://127.0.0.1:8081/" + fpath
+    // 添加时间
+    Entry.CreateTime  = timestamp
+    // 更新时间
+    Entry.UpdateTime  = timestamp
+
+    // 分类
+    Entry.TypeId      = 1
+    // 类别
+    Entry.CategoryId  = 1
+
+
+    if _, err := models.DamaoAdd(Entry); err != nil {
+        this.Ctx.WriteString( fmt.Sprintf("%v",err) )
+    }
+
+
+
     this.Ctx.WriteString( "上传成功~！！！！！！！" )
 }

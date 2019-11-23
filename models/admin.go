@@ -69,3 +69,4 @@ func (a *Admin) Update(fields ...string) error {
 	return nil
 }
 
+
