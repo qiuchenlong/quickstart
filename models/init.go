@@ -39,6 +39,13 @@ func Init() {
     //调用 RunCommand 执行 orm 命令。
     orm.RunCommand()
 
+    //orm.SetMaxIdleConns("default", 5000)
+    //orm.SetMaxOpenConns("default", 5000)
+
+    db, _ := orm.GetDB("default")
+    db.SetConnMaxLifetime(360)    
+   
+
     if beego.AppConfig.String("runmode") == "dev" {
     	// 开启 ORM 调试模式
 		orm.Debug = true

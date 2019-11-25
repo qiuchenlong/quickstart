@@ -23,6 +23,8 @@ func (self *UploadController) Upload(){
 
 func (this *UploadController) Upfile(){
 
+    fmt.Sprintf("request...")
+
     f, h, _ := this.GetFile("myfile")//获取上传的文件
     ext := path.Ext(h.Filename)
     //验证后缀名是否符合要求
@@ -32,6 +34,7 @@ func (this *UploadController) Upfile(){
         ".jpeg":true,
         ".png":true,
         
+        ".mov":true,
         ".mp4":true,
     }
     if _,ok:=AllowExtMap[ext];!ok{
@@ -53,6 +56,8 @@ func (this *UploadController) Upfile(){
     fileName := fmt.Sprintf("%x",hashName) + ext
     //this.Ctx.WriteString(  fileName )
 
+    //fmt.Println("upload file begin ", time.Now())
+
     fpath := uploadDir + fileName
     defer f.Close()//关闭上传的文件，不然的话会出现临时文件不能清除的情况
     err = this.SaveToFile("myfile", fpath)
@@ -60,6 +65,9 @@ func (this *UploadController) Upfile(){
         this.Ctx.WriteString( fmt.Sprintf("%v",err) )
     }
 
+    fmt.Println(fpath)
+
+    //fmt.Println("upload file end ", time.Now())
 
     // timeTemplate := "2006-01-02 15:04:05" //常规类型
     // stamp, _ := time.ParseInLocation(timeTemplate, time.Now().Format(timeTemplate), time.Local)
@@ -78,7 +86,7 @@ func (this *UploadController) Upfile(){
     // 图片
     Entry.Image       = strings.TrimSpace(this.GetString("image"))
     // URL
-    Entry.Url         = "http://127.0.0.1:8081/" + fpath
+    Entry.Url         = "http://www.qiuchenlong.top:8081/" + fpath
     // 添加时间
     Entry.CreateTime  = timestamp
     // 更新时间
@@ -94,6 +102,7 @@ func (this *UploadController) Upfile(){
         this.Ctx.WriteString( fmt.Sprintf("%v",err) )
     }
 
+    //fmt.Println(Entry)
 
 
     this.Ctx.WriteString( "上传成功~！！！！！！！" )
