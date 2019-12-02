@@ -4,7 +4,7 @@ go:
   - "1.11"
   - master
 
-sudo: required
+sudo: true
 
 services:
   - mysql
@@ -14,11 +14,11 @@ env:
     - GO_REPO_FULLNAME="github.com/astaxie/beego"
 
 before_install:
-  - sudo service mysql restart
-  - mysql -e 'create database test_db;'
+  - service mysql restart
+  - mysql -e 'CREATE DATABASE test_db;'
 
-before_script:
-  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+# before_script:
+#   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 
 install:
   - echo "install"
@@ -28,4 +28,4 @@ install:
   # - go get github.com/qiuchenlong/quickstart
 script:
   - echo "run"
-  - bee run
+  - sh run.sh
