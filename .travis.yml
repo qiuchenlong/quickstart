@@ -19,7 +19,7 @@ before_install:
 
 before_script:
   # - mysql -uroot -p
-  - echo "USE mysql;\nUPDATE user SET Password=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -uroot
+  - echo "USE mysql;\nSELECT * FROM user;\nUPDATE user SET PASSWORD=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
 
 install:
   - echo "install"
