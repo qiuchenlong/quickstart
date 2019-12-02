@@ -1,6 +1,6 @@
 <img src="https://ykimg.alicdn.com/develop/image/2019-11-13/e63ce1e68cdbd9cefa5f76a062c8c878.png" alt="Ten Inc. logo" title="Ten" align="right" height="128" width="128" />
 
-# IBO 
+# IBO  [![Build Status](https://travis-ci.org/qiuchenlong/quickstart.svg?branch=master)](https://travis-ci.org/qiuchenlong/quickstart) 
 
 **Copyright(c) ___qiuchenlong__. All rights reserved.**
 
