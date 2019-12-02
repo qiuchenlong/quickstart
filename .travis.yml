@@ -4,7 +4,7 @@ go:
   - "1.11"
   - master
 
-sudo: true
+sudo: required
 
 services:
   - mysql
@@ -29,3 +29,5 @@ install:
 script:
   - echo "run"
   # - sh run.sh
+  - go build main.go
+  - ./quickstart
