@@ -18,9 +18,9 @@ before_install:
   - mysql -e 'CREATE DATABASE test_db;'
 
 before_script:
-  - mysql -uroot -p
-  - \n
-  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n"
+  # - mysql -uroot -p
+  # - \n
+  # - echo "USE mysql;\nUPDATE user SET password=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n"
 
 install:
   - echo "install"
