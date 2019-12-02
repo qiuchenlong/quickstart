@@ -1,0 +1,25 @@
+language: go
+
+go:
+  - "1.11"
+services:
+  - mysql
+env:
+  global:
+    - GO_REPO_FULLNAME="github.com/astaxie/beego"
+before_install:
+   # link the local repo with ${GOPATH}/src/<namespace>/<repo>
+  - GO_REPO_NAMESPACE=${GO_REPO_FULLNAME%/*}
+   # relies on GOPATH to contain only one directory...
+  - mkdir -p ${GOPATH}/src/${GO_REPO_NAMESPACE}
+  - ln -sv ${TRAVIS_BUILD_DIR} ${GOPATH}/src/${GO_REPO_FULLNAME}
+  - cd ${GOPATH}/src/${GO_REPO_FULLNAME}
+   # get and build ssdb
+  - git clone git@github.com:qiuchenlong/quickstart.git
+  - cd quickstart
+  - make
+  - cd ..
+install:
+  - go get github.com/go-sql-driver/mysql
+script:
+  - bee run
