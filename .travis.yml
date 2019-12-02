@@ -17,8 +17,8 @@ before_install:
   - sudo service mysql restart
   - mysql -e 'CREATE DATABASE test_db;'
 
-# before_script:
-#   - echo "USE mysql;\nUPDATE user SET password=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+before_script:
+  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -uroot -p
 
 install:
   - echo "install"
@@ -29,5 +29,5 @@ install:
 script:
   - echo "run"
   # - sh run.sh
-  - go build main.go
+  # - go build main.go
   - ./quickstart
