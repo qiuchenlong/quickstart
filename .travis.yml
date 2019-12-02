@@ -2,24 +2,30 @@ language: go
 
 go:
   - "1.11"
+  - master
+
+sudo: required
+
 services:
   - mysql
+
 env:
   global:
     - GO_REPO_FULLNAME="github.com/astaxie/beego"
+
 before_install:
-   # link the local repo with ${GOPATH}/src/<namespace>/<repo>
-  - GO_REPO_NAMESPACE=${GO_REPO_FULLNAME%/*}
-   # relies on GOPATH to contain only one directory...
-  - mkdir -p ${GOPATH}/src/${GO_REPO_NAMESPACE}
-  - ln -sv ${TRAVIS_BUILD_DIR} ${GOPATH}/src/${GO_REPO_FULLNAME}
-  - cd ${GOPATH}/src/${GO_REPO_FULLNAME}
-   # get and build ssdb
+  - sudo service mysql restart
+  - mysql -e 'create database test_db;'
+
+before_script:
+  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('Cindy1024') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+
 install:
   - echo "install"
-  # - go get github.com/astaxie/beego
+
+  - go get -v github.com/astaxie/beego
   # - go get github.com/go-sql-driver/mysql
   # - go get github.com/qiuchenlong/quickstart
 script:
   - echo "run"
-  # - bee run
+  - bee run
