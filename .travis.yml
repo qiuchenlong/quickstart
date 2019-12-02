@@ -30,5 +30,5 @@ install:
 script:
   - echo "run"
   # - sh run.sh
-  # - go build main.go
-  - ./quickstart
+  - go build main.go
+  # - ./quickstart
