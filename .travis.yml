@@ -16,8 +16,10 @@ before_install:
   - cd ${GOPATH}/src/${GO_REPO_FULLNAME}
    # get and build ssdb
 install:
-  - go get github.com/astaxie/beego
-  - go get github.com/go-sql-driver/mysql
+  - echo "install"
+  # - go get github.com/astaxie/beego
+  # - go get github.com/go-sql-driver/mysql
   # - go get github.com/qiuchenlong/quickstart
 script:
-  - bee run
+  - echo "run"
+  # - bee run
