@@ -30,5 +30,7 @@ install:
 script:
   - echo "run"
   # - sh run.sh
+  - echo $PWD
+  - ls -l
   - go build main.go
   # - ./quickstart
