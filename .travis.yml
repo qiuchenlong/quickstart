@@ -31,6 +31,7 @@ script:
   - echo "run"
   # - sh run.sh
   - echo $PWD
-  - ls -l
+  - mv $GOPATH/src/github.com/qiuchenlong/quickstart $GOPATH/src/
+  - echo $PWD
   - go build main.go
   # - ./quickstart
