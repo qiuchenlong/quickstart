@@ -1,0 +1,1 @@
+docker run -p 80:80 -p 443:443 --name nginx8080 -v $PWD/www:/www -v $PWD/html:/usr/share/nginx/html -v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf -v $PWD/logs:/wwwlogs  -d nginx

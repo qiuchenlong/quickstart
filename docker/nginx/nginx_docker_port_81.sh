@@ -1,0 +1,1 @@
+docker run -p 81:80 --name mynginx81 -v $PWD/www:/www -v $PWD/html:/usr/share/nginx/html -v $PWD/logs:/wwwlogs  -d nginx

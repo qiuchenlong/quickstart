@@ -1,0 +1,1 @@
+docker run -p 82:80 --name mynginx82 -v $PWD/www:/www -v $PWD/html:/usr/share/nginx/html -v $PWD/logs:/wwwlogs -v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf -v $PWD/conf/conf.d/default.conf:/etc/nginx/conf.d/default.conf -d nginx
